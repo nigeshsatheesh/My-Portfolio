@@ -1,0 +1,45 @@
+/*
+Portfolio-Styling
+    fonts: 
+        -Cabin (navigation bar)
+        -Host Grotesk (Content)
+        -Space Grotesk (Headings)
+    colors:
+        #FBF7F4 (Body)
+        #E5DFD3 (cards)
+        #A39383
+        #675D54 (content)
+        #232323 (headings, Body)
+*/
+@font-face {
+    font-family: "Cabin";
+    src: url('assets/fonts/Cabin/Cabin-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "HostGrotesk";
+    src: url('assets/fonts/Host_Grotesk/HostGrotesk-Regular.ttf') format('truetype');
+    font-weight:normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "SpaceGrotesk";
+    src: url('assets/fonts/Space_Grotesk/SpaceGrotesk-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+    color: #FBF7F4;
+}
+.nav_bar {
+    font-family: "Cabin", sans-serif;
+    border-bottom: thin solid #232323;
+}
+.mail_id {
+    font-family: "SpaceGrotesk", sans-serif;
+    left:100px;
+}
