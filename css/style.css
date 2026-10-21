@@ -1,0 +1,134 @@
+/*
+Portfolio-Styling
+    fonts: 
+        -Cabin (navigation bar)
+        -Host Grotesk (Content)
+        -Space Grotesk (Headings)
+    colors:
+        #FBF7F4 (Body)
+        #E5DFD3 (cards)
+        #A39383
+        #675D54 (content)
+        #232323 (headings, Body)
+*/
+
+/*FONTS*/
+
+@font-face {
+    font-family: "Cabin";
+    src: url('../assets/fonts/Cabin/Cabin-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "CabinSemi";
+    src: url('../assets/fonts/Cabin/Cabin-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "HostGrotesk";
+    src: url('../assets/fonts/Host_Grotesk/HostGrotesk-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "HostGroteskItalic";
+    src: url('../assets/fonts/Host_Grotesk/HostGrotesk-Italic.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SpaceGrotesk";
+    src: url('../assets/fonts/Space_Grotesk/SpaceGrotesk-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "SpaceGroteskMedium";
+    src: url('../assets/fonts/Space_Grotesk/SpaceGrotesk-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "SpaceGroteskBold";
+    src: url('../assets/fonts/Space_Grotesk/SpaceGrotesk-Bold.ttf') format('truetype');
+}
+
+/*HOME PAGE*/
+
+html,
+body {
+    overflow: hidden;
+}
+
+body {
+    background-color: #FBF7F4;
+}
+
+header {
+    padding: 20px 0px 0px 0px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 0px 0px 0px 100px;
+}
+
+.links a {
+    color: #232323;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "CabinSemi";
+}
+
+.email a {
+    text-decoration: none;
+    color: #E5DFD3;
+    font-family: "SpaceGroteskMedium";
+    font-size: 15px;
+    background-color: #232323;
+    padding-left: 5px;
+    padding-right: 100px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "HostGrotesk";
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.tagline {
+    padding-left: 100px;
+    color: #675D54;
+}
+
+.date {
+    padding-right: 100px;
+    color: #675D54;
+}
+
+.nigesh {
+    font-family: "HostGroteskItalic";
+    font-size: 36px;
+    color: #675D54;
+    margin-left: 106px;
+    position: absolute;
+    bottom: 275px;
+}
+
+.portfolio {
+    font-family: "SpaceGroteskBold";
+    color: #232323;
+    font-size: 395px;
+    letter-spacing: -22px;
+    margin-left: 80px;
+    position: absolute;
+    bottom: -160px;
+}
