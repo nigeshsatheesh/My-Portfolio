@@ -20,7 +20,7 @@ Portfolio-Styling
 }
 
 @font-face {
-    font-family: "CabinSemi";
+    font-family: "CabinSemiBold";
     src: url('../assets/fonts/Cabin/Cabin-SemiBold.ttf') format('truetype');
 }
 
@@ -52,8 +52,7 @@ Portfolio-Styling
 
 /*HOME PAGE*/
 
-html,
-body {
+html, body {
     overflow: hidden;
 }
 
@@ -82,10 +81,17 @@ nav {
     color: #232323;
     text-decoration: none;
     font-size: 15px;
-    font-family: "CabinSemi";
+    font-family: "CabinSemiBold";
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.email a {
+.links a:hover {
+    color: #675D54;
+    transform: scale(1.01) translateY(-1px);
+}
+
+.email a{
+    display: inline-block;
     text-decoration: none;
     color: #E5DFD3;
     font-family: "SpaceGroteskMedium";
@@ -93,6 +99,19 @@ nav {
     background-color: #232323;
     padding-left: 5px;
     padding-right: 100px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.email a:hover {
+    color: #232323;
+    background-color: #E5DFD3;
+    transform: scale(1.01) translateY(-1px);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #675D54;
 }
 
 .info {
@@ -132,3 +151,4 @@ nav {
     position: absolute;
     bottom: -160px;
 }
+
