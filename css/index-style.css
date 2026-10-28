@@ -525,16 +525,50 @@ hr{
     -webkit-text-stroke: 2px #232323;
 }
 .journey-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    align-items: start;
+    gap: 100px;
     margin-top: 40px;
 }
 .journey-timeline{
-    flex: 1;
+    display: grid;
+    grid-template-columns: 5% 80%;
     min-width: 0px;
+}
+.journey-vector{
+    margin-left: 4.5px;
+    margin-top: -10px;
+}
+.journey-vector svg{
+    display: block;
+    overflow: visible;
+}
+.journey-vector rect{
+    transform-box: fill-box;
+    transform-origin: center;
+    rotate: 45deg;
+}
+.journey-subsection-vector, .subsection-path, .subsection-path-end{
+    transition: transform 0.3s ease;
+}
+.journey-timeline:has(.journey-subsection.secondyear .journey-subsection-item:hover) .journey-subsection-vector.secondyear ,
+.journey-timeline:has(.journey-subsection.firstyear .journey-subsection-item:hover) .journey-subsection-vector.firstyear,
+.journey-timeline:has(.journey-subsection.twelvethgrade .journey-subsection-item:hover) .journey-subsection-vector.twelvethgrade,
+.journey-timeline:has(.journey-subsection.tenthgrade .journey-subsection-item:hover) .journey-subsection-vector.tenthgrade{
+    transform: scale(1.2) translate(0px, 0px);
+}
+.journey-timeline:has(.journey-subsection.secondyear .journey-subsection-item:hover) .subsection-path.secondyear, 
+.journey-timeline:has(.journey-subsection.firstyear .journey-subsection-item:hover) .subsection-path.firstyear,
+.journey-timeline:has(.journey-subsection.twelvethgrade .journey-subsection-item:hover) .subsection-path.twelvethgrade,
+.journey-timeline:has(.journey-subsection.tenthgrade .journey-subsection-item:hover) .subsection-path.tenthgrade{
+    transform: translateX(5px);
+}
+.journey-timeline:has(.journey-subsection.secondyear .journey-subsection-item:hover) .subsection-path-end.secondyear,
+.journey-timeline:has(.journey-subsection.firstyear .journey-subsection-item:hover) .subsection-path-end.firstyear,
+.journey-timeline:has(.journey-subsection.twelvethgrade .journey-subsection-item:hover) .subsection-path-end.twelvethgrade,
+.journey-timeline:has(.journey-subsection.tenthgrade .journey-subsection-item:hover) .subsection-path-end.tenthgrade{
+    transform: translate(3.6px, -3.6px);
 }
 .journey-section{
     display: flex;
@@ -552,10 +586,6 @@ hr{
     font-size: 16px;
     color: #675D54;
     margin-left: 40px;
-    transition: transform 0.3s ease;
-}
-.journey-section-description:hover{
-    transform: translatex(5px);
 }
 .journey-subsection{
     display: flex;
@@ -573,6 +603,10 @@ hr{
     color: #232323;
     letter-spacing: -1px;
     gap: 10px;
+    transition: transform 0.3s ease;
+}
+.journey-subsection:has(.journey-subsection-item:hover) .journey-subsection-title{
+    transform: translatex(5px);
 }
 .journey-subsection-title p{
     font-family: "HostGroteskLightItalic";
@@ -584,6 +618,7 @@ hr{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: transform 0.3s ease;
 }
 .journey-subsection-item-title{
     font-family: "HostGroteskBoldItalic";
@@ -600,9 +635,8 @@ hr{
     font-size: 16px;
     color: #675D54;
     margin-left: 80px;
-    transition: transform 0.3s ease;
 }
-.journey-subsection-item-content:hover{
+.journey-subsection-item:hover{
     transform: translatex(5px);
 }
 .journey-subsection-item-content ul{
