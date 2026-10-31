@@ -89,7 +89,8 @@ body{
     background-color: #FBF7F4;
 }
 main{
-    margin-left: 100px;
+    position: relative;
+    overflow-x: clip;
 }
 hr{
     border: none;
@@ -100,6 +101,9 @@ hr{
 
 /*ABOUT SECTION*/
 
+.about{
+    margin-left: 100px; 
+}
 .about-header{
     margin-top:20px;
 }
@@ -142,14 +146,30 @@ hr{
     margin-top: -210px;
     margin-right: 80px;
 }
+.aboutpage-vector{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 700px;
+    height: 200px;
+    z-index: -1;
+}
+.aboutpage-vector .vector{
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    margin-left: 63px;
+    margin-top: 20px;
+}
 .about-hr{
     margin-top: -1px;
-    background-color: #675D54;
 }
 
 /*SKILLS SECTION*/
 
-
+.skills{
+    margin-left: 100px; 
+}
 .skills-header .first{
     font-family: "SpaceGroteskBold";
     font-size: 100px;
@@ -215,12 +235,42 @@ hr{
 .skills-card .card-content:hover{
     transform: translatex(5px);
 }
+.skillspage-vector{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 30%;
+    pointer-events: none;
+}
+.skillspage-vector .vector{
+    position: absolute;
+    height: 700px;
+    margin-top: 740px;
+    margin-left: -100px;
+}
+.skillspage-vector .first{
+    top: 0;
+    left: 0;
+}
+.skillspage-vector .second{
+    z-index: -2;
+    top: -5px;
+    left: -15px;
+}
+.skillspage-vector .third{
+    z-index: -3;
+    top: -15px;
+    left: -30px;
+}
 .skills-hr{
-    background-color: #675D54;
+    margin-top: 50px;
 }
 
 /*WORKS SECTION*/
-
+.works{
+    margin-left: 100px;
+}
 .works-header .first{
     font-family: "SpaceGroteskBold";
     font-size: 100px;
@@ -256,11 +306,11 @@ hr{
     width: 500px;
     height: 480px;
     margin-top: 70px;
-    margin-left: 50px;
     position: absolute;
     top: 0px;
-    left: 410px;
+    left: 30%;
     right: auto;
+    transform: translateX(-50%);
     transition: transform 0.3s ease;
 }
 .technically > .technical-works-card:nth-child(2):hover{
@@ -355,7 +405,7 @@ hr{
     margin-top: -2.5px;
 }
 .non-technically{
-    margin-top: 50px;
+    margin-top: 150px;
     position: relative;
     width: 100%;
     min-height: 600px;
@@ -508,15 +558,62 @@ hr{
     z-index:1;
     opacity: 16.67%
 }
+.workspage-vector{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 30%;
+    z-index: -1;
+}
+.workspage-vector .first.right-vector{
+    position: relative;
+    margin-top: 1480px;
+    margin-left: 1100px;
+    z-index: 2;
+}
+.workspage-vector .second.right-vector{
+    position: relative;
+    margin-top: -1356px;
+    margin-left: 1080px;
+    z-index: 1;
+}
+.workspage-vector .third.right-vector{
+    position: relative;
+    margin-top: -1385px;
+    margin-left: 1060px;
+    z-index: 0;
+}
+.workspage-vector .left-vector{
+    position: relative;
+}
+.workspage-vector .first.left-vector{
+    position: relative;
+    margin-top: -939px;
+    z-index: 2;
+}
+.workspage-vector .second.left-vector{
+    position: relative;
+    margin-top: -1246px;
+    margin-left: -20px;
+    z-index: 1;
+}
+.workspage-vector .third.left-vector{
+    position: relative;
+    margin-top: -1275px;
+    margin-left: -40px;
+    z-index: 0;
+}
 .works-hr{
     margin-top: 80px;
-    border: none;
-    height: 2px;
-    background-color: #675D54;
 }
 
 /*JOURNEY SECTION*/
 
+.journey{
+    position: relative;
+    margin-left: 100px; 
+    margin-top: -16px;
+}
 .journey-header .first{
     font-family: "SpaceGroteskBold";
     font-size: 100px;
@@ -722,6 +819,34 @@ hr{
     margin-left: 10px;
     margin-top: -5px;
 }
+.journeypage-vector{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 30%;
+    z-index: -1;
+    pointer-events: none;
+    overflow-y: clip;
+}
+.journeypage-vector .vector{
+    margin-top: -100px;
+}
+.journeypage-vector .first{
+    position: relative;
+    z-index: 2;
+}
+.journeypage-vector .second{
+    position: relative;
+    margin-top: -2260px;
+    margin-left: -20px;
+    z-index: 1;
+}
+.journeypage-vector .third{
+    position: relative;
+    margin-top: -2260px;
+    margin-left: -40px;
+    z-index: 0;
+}
 .journey-hr{
     margin-top: 70px;
 }
@@ -729,11 +854,14 @@ hr{
 /*CONTACT SECTION*/
 
 .contact{
+    position: relative;
     background-color: #232323;
-    margin-left: -100px;
     margin-top: -17px;
+    isolation: isolate;
 }
 .contact-alignment{
+    position: relative;
+    z-index: 1;
     margin-left: 100px;
 }
 .contact-header .first{
@@ -887,6 +1015,14 @@ hr{
 .contact-form input:focus{
     outline: none;
 }
+.contact-form input:-webkit-autofill, 
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus{
+    font-family: "HostGroteskMedium" !important;
+    -webkit-text-fill-color: #232323;
+    -webkit-box-shadow: 0 0 0 1000px #A39383 inset;
+    caret-color: #232323;
+}
 .first input{
     width: 230px;
 }
@@ -930,6 +1066,34 @@ hr{
 .submit button:hover{
     color: #232323;
     background-color: #675D54;
+}
+.contactpage-vector{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 30%;
+    pointer-events: none;
+    z-index: 0;
+}
+.contactpage-vector .vector{
+    width: 600px;
+    height: 600px;
+    margin-left: 550px;
+    rotate: -20deg;
+}
+.contactpage-vector .first.vector{
+    position: absolute;
+    z-index: 0;
+}
+.contactpage-vector .second.vector{
+    position: absolute;
+    margin-left: 540px;
+    z-index: -1;
+}
+.contactpage-vector .third.vector{
+    position: absolute;
+    margin-left: 530px;
+    z-index: -2;
 }
 .contact-hr{
     margin-top: 70px;

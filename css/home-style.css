@@ -30,8 +30,32 @@ Portfolio-Styling
 }
 
 @font-face {
+    font-family: "HostGroteskSemiBold";
+    src: url('../assets/fonts/Host_Grotesk/HostGrotesk-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
     font-family: "HostGroteskItalic";
     src: url('../assets/fonts/Host_Grotesk/HostGrotesk-Italic.ttf') format('truetype');
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: "HostGroteskMediumItalic";
+    src: url('../assets/fonts/Host_Grotesk/HostGrotesk-MediumItalic.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "HostGroteskSemiBoldItalic";
+    src: url('../assets/fonts/Host_Grotesk/HostGrotesk-SemiBoldItalic.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "HostGroteskBoldItalic";
+    src: url('../assets/fonts/Host_Grotesk/HostGrotesk-BoldItalic.ttf') format('truetype');
     font-style: italic;
 }
 
@@ -53,6 +77,10 @@ Portfolio-Styling
 /*HOME PAGE*/
 
 html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
     overflow: hidden;
 }
 
@@ -140,6 +168,7 @@ hr {
     margin-left: 106px;
     position: absolute;
     bottom: 275px;
+    z-index: 2;
 }
 
 .portfolio {
@@ -150,5 +179,44 @@ hr {
     margin-left: 80px;
     position: absolute;
     bottom: -160px;
+    z-index: 2;
 }
 
+.homepage-vector{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2000px;
+    height: 1124px;
+
+    overflow: hidden;
+    pointer-events: none;
+    margin-top: -95px;
+    margin-left: 50px;
+}
+
+.homepage-vector .vector{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1400px;
+    height: 800px;
+}
+
+.homepage-vector .first{
+    left: 95px;
+    top: 172px;
+    z-index: 1;
+    animation-delay: 0.4s;
+}
+
+.homepage-vector .second{
+    left: 80px;
+    top: 172px;
+}
+
+.homepage-vector .third{
+    left: 60px;
+    top: 172px;
+    z-index: -1;
+}
