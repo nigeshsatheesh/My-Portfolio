@@ -1077,19 +1077,67 @@ hr{
 /*FOOTER SECTION*/
 
 .footer{
+    display: flex;
+    flex-direction: row;
     background-color: #232323;
-    height: 50px;
-    margin-top: -100px;
-    margin-left: -100px;
-    text-align: center;
+    height: 80px;
+    margin-top: -20px;
+    gap: 300px;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+nav a{
+    color: #FBF7F4;
+    text-decoration: none;
+    font-family: "CabinSemiBold";
+    opacity: 75%;
+    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+nav a:hover{
+    color: #FBF7F4;
+    opacity: 100%;
+    transform: scale(1.01) translateY(-1px);
 }
 .copyrights{
-    font-family: "Cabin";
+    display: flex;
+    flex-direction: column;
+    font-family: "CabinSemiBold";
     color: #FBF7F4;
     opacity: 75%;
-    margin-top: 50px;
+    margin-top: 15px;
+    margin-left: -100px;
 }
-.copyrights p{
-    margin-top: 100px;
-    transform: translateY(15px);
+.copyrights p:nth-child(1){
+    margin-left: -3px;
+}
+.copyrights p:nth-child(2){
+    margin-top: -10px;
+}
+.location{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.location a{
+    display: inline-block;
+    color: #FBF7F4;
+    text-decoration: none;
+    font-family: "CabinSemiBold";
+    opacity: 75%;
+    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+.location a:hover{
+    color: #FBF7F4;
+    opacity: 100%;
+    transform: scale(1.03) translateY(-1px);
+}
+.loaction a img{
+    transition: filter 0.3s ease;
+}
+.location:has(a:hover) img{
+    filter: opacity(100%)
 }
