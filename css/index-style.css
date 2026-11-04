@@ -484,6 +484,7 @@ hr{
     saturate(500%) hue-rotate(350deg) brightness(85%) contrast(85%);
 }
 .nontechnical-card-content{
+    position: relative;
     margin-top: 120px;
     margin-left: 30px;
     margin-right: 390px;
@@ -527,6 +528,15 @@ hr{
     color: #675D54;
     margin-left: 5px;
     margin-top: -2.5px;
+}
+.nontechnical-card-design{
+    position: absolute;
+    margin-left: 650px;
+    margin-top: 100px;
+}
+.nontechnical-card-design.project-2 svg{
+    width: 300px;
+    height: 300px;
 }
 .nontechnical-works-card.top:hover{
     cursor: pointer;
@@ -1036,7 +1046,7 @@ hr{
     background-color: #A39383;
     border: none;
     border-radius: 2px;
-    margin-left: 437px;
+    margin-left: 434px;
 }
 .submit button:hover{
     color: #232323;
@@ -1094,7 +1104,7 @@ nav{
 nav a{
     color: #FBF7F4;
     text-decoration: none;
-    font-family: "CabinSemiBold";
+    font-family: "Cabin";
     opacity: 75%;
     transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
 }
@@ -1106,7 +1116,7 @@ nav a:hover{
 .copyrights{
     display: flex;
     flex-direction: column;
-    font-family: "CabinSemiBold";
+    font-family: "Cabin";
     color: #FBF7F4;
     opacity: 75%;
     margin-top: 15px;
@@ -1126,14 +1136,14 @@ nav a:hover{
     display: inline-block;
     color: #FBF7F4;
     text-decoration: none;
-    font-family: "CabinSemiBold";
+    font-family: "Cabin";
     opacity: 75%;
     transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
 }
 .location a:hover{
     color: #FBF7F4;
     opacity: 100%;
-    transform: scale(1.03) translateY(-1px);
+    transform: scale(1.01) translateY(-1px);
 }
 .loaction a img{
     transition: filter 0.3s ease;
