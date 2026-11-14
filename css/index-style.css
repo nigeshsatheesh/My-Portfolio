@@ -745,7 +745,7 @@ hr{
     background-color: #E5DFD3;
     border-radius: 5px;
     width: 550px;
-    height: 300px;
+    height: 320px;
 }
 .journey-card-internships{
     display: flex;
@@ -785,7 +785,7 @@ hr{
     background-color: #E5DFD3;
     border-radius: 5px;
     width: 550px;
-    height: 200px;
+    height: 160px;
 }
 .card-title{
     font-family: "SpaceGroteskBold";
@@ -1039,18 +1039,40 @@ hr{
 .contact-form textarea::-webkit-scrollbar{
     display: none;
 }
-.submit button{
+.last{
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    gap: 90px;
+}
+.last #form-error{
+    display: none;
+    font-family: "HostGroteskSemiBold";
+    color: #232323;
+    font-size: 18px;
+    background-color: #675D54;
+    border-radius: 2px;
+    text-align: center;
+    flex: 1;
+    margin: 0;
+}
+.last #submit-button{
     font-family: "HostGroteskSemiBold";
     color: #232323;
     letter-spacing: 0.5px;
     background-color: #A39383;
     border: none;
     border-radius: 2px;
-    margin-left: 434px;
+    flex-shrink: 0;
 }
-.submit button:hover{
+#submit-button:hover{
     color: #232323;
     background-color: #675D54;
+}
+.error-message{
+    font-family: "Cabin";
+    color: #A39383;
+    font-size: 13px;
 }
 .contactpage-vector{
     position: absolute;

@@ -1,0 +1,9 @@
+Service ID - service_n1p1fp8
+
+Template ID - template_mp06p4j
+
+Account API keys
+
+    Public Key - XNz7XvPwkD7NKtkmQ
+
+    Private Key - jdcliMTPYkE2QjRrFMTiY

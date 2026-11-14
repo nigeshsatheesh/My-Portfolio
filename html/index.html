@@ -38,7 +38,7 @@
                             consistent hands-on growth.</p>
                         <p>From strong fundamentals to an active undergraduate journey, I've kept my performance and learning at the center. 
                             Beyond academics, I'm an intermediate programmer, developer, UI designer and an active member in tech communities — 
-                            <b>6 Hackathons, 2 Workshops, 10 Certifications, 6 Mini Projects</b> under my belt. Currently an active member in 
+                            <b>6 Hackathons, 2 Workshops, 11 Certifications, 6 Mini Projects</b> under my belt. Currently an active member in 
                             <b>AWS Builder’s, Google Cloud & NVIDIA, DEV’s Community</b></p>
                         <p>My core interests are <b>Data Science, Machine Learning and MERN Stack Development</b> — domains I'm actively building 
                             my career in through projects, internships, and certifications.</p>
@@ -114,12 +114,12 @@
                         <div class="card-title">Tools & Platform</div>
                         <div class="card-content tools-platform">
                             <ul>
-                                <li>Node.js</li> 
-                                <li>VS Code</li>
                                 <li>Git & Github</li>
                                 <li>Docker</li>
-                                <li>Figma</li>
+                                <li>MongoDB Atlas</li> 
+                                <li>VS Code</li>
                                 <li>MS Excel</li>
+                                <li>Figma</li>
                             </ul>
                         </div>
                     </div>
@@ -127,14 +127,14 @@
                         <div class="card-title">Frameworks & Libraries</div>
                         <div class="card-content frameworks-libraries">
                             <ul>
-                                <li>React.js</li>
-                                <li>Node.js</li>
-                                <li>Express.js</li>
-                                <li>Bootstrap</li>
                                 <li>Numpy</li>
                                 <li>Pandas</li>
                                 <li>Matplotlib</li>
                                 <li>sci-kit learn</li>
+                                <li>React.js</li>
+                                <li>Node.js</li>
+                                <li>Express.js</li>
+                                <li>Bootstrap</li>
                             </ul>
                         </div>
                     </div>
@@ -143,8 +143,8 @@
                         <div class="card-content soft-skills">
                             <ul>
                                 <li>Leadership</li>
+                                <li>Constant Upskilling</li>
                                 <li>Problem Solving</li>
-                                <li>Analytical Thinking</li>
                                 <li>Team Collaboration</li>
                                 <li>Designer</li>
                                 <li>Creative Ideation</li>
@@ -822,7 +822,7 @@
                             <div class="card-content">
                                 <ul>
                                     <li>Artificial Intelligence - Infosys Springboard (Online / Aug - Sept 2026)</li>
-                                    <li>Web Development - Corizo (Online / Jun - Aug 2026)</li>
+                                    <li>Web Development - Corizo x IBM (Online / Jun - Aug 2026)</li>
                                 </ul>
                             </div>
                         </div>
@@ -831,6 +831,7 @@
                             <div class="card-title">Certifications</div>
                             <div class="card-content">
                                 <ul>
+                                    <li>Software Engineering - SWAYAM NPTEL (2026)</li>
                                     <li>Python For Datascience - SWAYAM NPTEL (2026)</li>
                                     <li>Getting Started with Artificial Intelligence - IBM (2026)</li>
                                     <li>Introduction to Relational Databases (RDBMS) - IBM (2026)</li>
@@ -884,11 +885,8 @@
                             <div class="card-title">Achievements</div>
                             <div class="card-content">
                                 <ul>
-                                    <li>90+ Problems Completion -  Leetcode</li>
-                                    <li>100 & 50 Days Completion - Leetcode</li>
-                                    <li>Bronze Level Problem Solving - HackerRank</li>
-                                    <li>Beginners Badges - AWS Builder's Center</li>
-                                    <li>6 Mini Projects</li>
+                                    <li>IBM Certified Full Stack JavaScript Developer</li>
+                                    <li>Virtual Badges - Leetcode, HackerRank, AWS Builder's Center, Google's Builder Hub</li>
                                 </ul>
                             </div>
                         </div>
@@ -1020,7 +1018,7 @@
                     <div class="contact-description">
                         <p>I'm actively looking for internship, placement, and collaborative opportunities. If you're building something interesting or have a role that suits me — I'd love to hear from you.</p>
                     </div>
-                    <a href="../assets/files/Resume.pdf" download>Download my Resume <img id="arrow" src="../assets/designs/icons/resume-link-arrow.svg"> </a>
+                    <a href="../assets/files/Resume.pdf" target="_blank">Download my Resume <img id="arrow" src="../assets/designs/icons/resume-link-arrow.svg"> </a>
                     <div class="contact-content">
                         <div class="social-links">
                             <p>Social Links</p>
@@ -1087,27 +1085,32 @@
 
                         </div>
                         <div class="contact-form">
-                            <form method="post">
+                            <form id="contact-form">
                                 <div class="first-details">
                                     <div class="first">
                                         <label for="name">Your Name</label>
-                                        <input type="text" id="name" name="name" placeholder="Type your name" required>
+                                        <input type="text" id="name" name="fromName" placeholder="Type your name">
+                                        <span class="error-message" id="name-error"></span>
                                     </div>
                                     <div class="second">
                                         <label for="mailid">Mail Id</label>
-                                        <input type="email" id="mailid" name="mailid" placeholder="Type your mail Id" required>
+                                        <input type="email" id="email" name="fromEmail" placeholder="Type your mail Id">
+                                        <span class="error-message" id="email-error"></span>
                                     </div>
                                 </div>
                                 <div class="subject">
                                     <label for="subject">Subject</label>
-                                    <input type="text" id="subject" name="subject" placeholder="Highlight your purpose of approach" required>
+                                    <input type="text" id="subject" name="subject" placeholder="Highlight your purpose of approach">
+                                    <span class="error-message" id="subject-error"></span>
                                 </div>
                                 <div class="message">
                                     <label for="message">Message</label>
-                                    <textarea id="message" name="message" placeholder="Type down your message..." row="5"></textarea>
+                                    <textarea id="message" name="message" placeholder="Type down your message..." rows="5"></textarea>
+                                    <span class="error-message" id="message-error"></span>
                                 </div>
-                                <div class="submit">
-                                    <button type="submit">Submit</button>
+                                <div class="last">
+                                    <button type="submit" id="submit-button">Submit</button>
+                                    <p class="error-message" id="form-error"></p>
                                 </div>
                             </form>
                         </div>
@@ -1298,6 +1301,11 @@
 
                 <script src="../js/card-stack-animations/works-page/technical-cards/animation.js"></script>
                 <script src="../js/card-stack-animations/works-page/nontechnical-cards/animation.js"></script>
+
+            <!--FORM VALIDATION-->
+
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                <script src="../js/form-validation/contact-page/form.js"></script>
 
     </body>
 </html>
