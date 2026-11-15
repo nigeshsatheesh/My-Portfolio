@@ -12,14 +12,14 @@ I am a B.Tech student specializing in Artificial Intelligence & Data Science at 
 
 ## Sections
 
-│ Section │ Description │
-│ --- │ --- │
-│ **Home** │ Homepage to my portfolio consisting of navigation links and a hero │
-│ **About** │ About my background, education│
-│ **Skills** │ Skills that I have related t0 programming languages, tools, and technologies │
-│ **Works** │ Interactive stacked project cards (click the top card to send it to the back) │
-│ **Journey** │ My timeline of education, internships, coursework, and milestones journey │
-│ **Contact** │ Ways to get in touch │
+| Section | Description |
+|:---|:---|
+| **Home** | Homepage of my portfolio featuring navigation links and a hero section. |
+| **About** | Introduction to my background, education, and interests. |
+| **Skills** | Overview of my programming languages, tools, and technologies. |
+| **Works** | Interactive stacked project cards. Clicking the top card sends it to the back, revealing the next project. |
+| **Journey** | Timeline showcasing my education, internships, coursework, and milestones. |
+| **Contact** | Contact information and ways to get in touch. |
 
 ## Design Highlights
 
