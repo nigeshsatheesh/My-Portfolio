@@ -74,6 +74,7 @@ Portfolio-Styling
     src: url('../assets/fonts/Space_Grotesk/SpaceGrotesk-Bold.ttf') format('truetype');
 }
 
+
 /*HOME PAGE*/
 
 html, body {
@@ -86,6 +87,11 @@ html, body {
 
 body {
     background-color: #FBF7F4;
+}
+
+body::selection{
+    color: #E5DFD3;
+    background-color: rgb(35,35,35,0.95);
 }
 
 header {
@@ -184,15 +190,15 @@ hr {
 
 .homepage-vector{
     position: absolute;
-    top: 0;
+    top: auto;
     left: 0;
     width: 2000px;
     height: 1124px;
-
     overflow: hidden;
     pointer-events: none;
     margin-top: -95px;
     margin-left: 50px;
+    bottom: 0;
 }
 
 .homepage-vector .vector{
@@ -220,3 +226,331 @@ hr {
     top: 172px;
     z-index: -1;
 }
+.homepage-vector{
+    --h0: 100svh;
+    top: calc(100svh - var(--h0));
+}
+
+/*RESPONSIVE STYLING*/
+
+:root{
+    --t: min(1px, 0.0651vw);
+    --g: clamp(16px, 6.51vw, 100px);
+}
+body{ 
+    height: 100%; 
+    height: 100svh; 
+}
+.links{ 
+    padding-left: var(--g);
+    gap: clamp(16px, 3.26vw, 50px);
+}
+.email a{ 
+    padding-right: var(--g);
+}
+.tagline{ 
+    padding-left: var(--g);
+}
+.date{ 
+    padding-right: var(--g);
+}
+.nigesh{
+    font-size: max(18px, calc(36 * var(--t)));
+    margin-left: max(16px, calc(106 * var(--t)));
+    bottom: calc(275 * var(--t));
+}
+.portfolio{
+    font-size: calc(395 * var(--t));
+    letter-spacing: calc(-22 * var(--t));
+    margin-left: max(12px, calc(80 * var(--t)));
+    bottom: calc(-160 * var(--t));
+}
+.homepage-vector{
+    width: calc(2000 * var(--t));
+    height: calc(1124 * var(--t));
+    margin-top: calc(-95 * var(--t));
+    margin-left: calc(50 * var(--t));
+}
+.homepage-vector .vector{
+    width: calc(1400 * var(--t));
+    height: calc(800 * var(--t));
+}
+.homepage-vector .first{  
+    left: calc(95 * var(--t)); 
+    top: calc(172 * var(--t)); 
+}
+.homepage-vector .second{ 
+    left: calc(80 * var(--t)); 
+    top: calc(172 * var(--t)); 
+}
+.homepage-vector .third{  
+    left: calc(60 * var(--t)); 
+    top: calc(172 * var(--t)); 
+}
+/*MOBILE VIEWPORT*/
+@media (max-width: 480px) {
+    nav {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    .email {
+        width: 100%;
+    }
+
+    .email a {
+        display: block;
+        padding: 8px var(--g);
+        font-size: 14px;
+    }
+
+    .info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .date {
+        padding-left: var(--g);
+        padding-right: 0;
+    }
+}
+    /*SAMSUNG GALAXY A55*/
+    @media (max-width: 360px) {
+        .homepage-vector { 
+            transform: translate(15px, 645px); 
+        }
+    }
+    /*IPHONE SE*/
+    @media (min-width: 361px) and (max-width: 380px) {
+        .homepage-vector { 
+            transform: translate(15px, 500px); 
+        }
+    }
+    /*IPHONE 16*/
+    @media (min-width: 381px) and (max-width: 400px) {
+        .homepage-vector { 
+            transform: translate(15px, 675px); 
+        }
+    }
+    /*PIXEL 9 & 10*/
+    @media (min-width: 401px) and (max-width: 420px) {
+        .homepage-vector { 
+            transform: translate(15px, 740px); 
+        }
+    }
+    /*PIXEL 9 PRO*/
+    @media (min-width: 421px) and (max-width: 439px){
+        .homepage-vector { 
+            transform: translate(15px, 760px); 
+        }
+    }
+    /*IPHONE 16 PRO MAX*/
+    @media (min-width: 440px) and (max-width: 480px){
+        .homepage-vector { 
+            transform: translate(15px, 760px); 
+        }
+    }
+    /*FOLDABLES*/
+    @media (min-height: 968px) {
+        .homepage-vector { 
+            transform: translate(15px, 785px); 
+        }
+    }
+
+/*TABLET VIEWPORT */
+@media (min-width: 768px) and (max-width: 1032px) {
+    nav {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    .email {
+        width: 100%;
+    }
+
+    .email a {
+        display: block;
+        padding: 8px var(--g);
+        font-size: 14px;
+    }
+}
+    /*IPAD MINI*/
+    @media (min-width: 481px) and (max-width: 768px) {
+        .homepage-vector { 
+            transform: translate(15px, 680px); 
+        }
+    }
+    /*SURFACE PRO 10*/
+    @media (min-width: 769px) and (max-width: 960px) {
+        .homepage-vector { 
+            transform: translate(15px, 1010px); 
+        }
+    }
+    /*IPAD PRO 13*/
+    @media (min-width: 961px) and (max-width: 1032px) {
+        .homepage-vector { 
+            transform: translate(15px, 910px); 
+        }
+    }
+
+/*DESKTOP VIEWPORT*/
+@media (min-width: 1367px) {
+    nav {
+        flex-wrap: nowrap;
+    }
+
+    .links {
+        flex-wrap: nowrap;
+    }
+
+    .email {
+        width: auto;
+    }
+
+    .email a {
+        display: inline-block;
+        font-size: 16px;
+    }
+}
+
+    /*SMALL LAPTOP 1280 x 720*/
+    @media (min-width: 1101px) and (max-width: 1365px) {
+        .homepage-vector { 
+            transform: translate(15px, 141px); 
+        }
+    }
+    /*STANDARD LAPTOP 1366 x 768*/
+    @media (min-width: 1366px) and (max-width: 1439px) {
+        .homepage-vector { 
+            transform: translate(15px, 150px); 
+        }
+    }
+    /*MACBOOK 1440 x 900*/
+    @media (min-width: 1440px) and (max-width: 1599px) {
+        .homepage-vector { 
+            transform: translateX(15px) ; bottom: -60px; 
+        }
+    }
+    /*1600 x 900 (your old value kept)*/
+    @media (min-width: 1600px) and (max-width: 1919px) {
+        .homepage-vector { 
+            bottom: -60px;
+            transform: translate(15px, -100px); 
+        }
+    }
+    /*FULL HD DESKTOP 1920 x 1080*/
+    @media (min-width: 1920px) and (max-width: 2559px) {
+        .links{
+            scale: 2;
+            transform: translateX(90px) translateY(20px);
+        }
+        .tagline{
+            scale: 2;
+            transform: translateX(45px) translateY(50px);
+        }
+        .date{
+            scale: 2;
+            transform: translateX(-10px) translatey(50px);
+        }
+        .email{
+            scale: 2;
+            transform: translateX(-80px) translateY(20px);
+        }
+        hr{
+            border: 2px solid #675D54;
+            transform: translateY(100px);
+        }
+        .homepage-vector {
+            transform: translate(20px, 200px) scale(1.3);
+            transform-origin: top left;
+        }
+        .nigesh{
+            scale: 1.25;
+            transform: translateY(-40px) translateX(25px)
+        }
+        .portfolio{
+            scale: 1.25;
+            transform: translateX(160px);
+        }
+    }
+    /*QHD DESKTOP 2560 x 1440*/
+    @media (min-width: 2560px) and (max-width: 3839px) {
+        .links{
+            scale: 2.5;
+            transform: translateX(110px) translateY(20px);
+        }
+        .tagline{
+            scale: 2.5;
+            transform: translateX(55px) translateY(50px);
+        }
+        .date{
+            scale: 2.5;
+            transform: translateX(-10px) translatey(50px);
+        }
+        .email{
+            scale: 2.5;
+            transform: translateX(-100px) translateY(20px);
+        }
+        hr{
+            border: 2px solid #675D54;
+            transform: translateY(100px);
+        }
+        .homepage-vector {
+            transform: translate(-20px, 250px) scale(1.6);
+            transform-origin: top left;
+        }
+        .nigesh{
+            scale: 1.7;
+            transform: translateY(-120px) translateX(35px)
+        }
+        .portfolio{
+            scale: 1.7;
+            transform: translateY(-50px) translateX(300px);
+        }
+    }
+    /*4K DESKTOP 3840 x 2160*/
+    @media (min-width: 3840px) {
+        .links{
+            scale: 4;
+            transform: translateX(150px) translateY(20px);
+        }
+        .tagline{
+            scale: 4;
+            transform: translateX(85px) translateY(50px);
+        }
+        .date{
+            scale: 4;
+            transform: translateX(-20px) translatey(50px);
+        }
+        .email{
+            scale: 4;
+            transform: translateX(-100px) translateY(20px);
+        }
+        hr{
+            border: 2px solid #675D54;
+            transform: translateY(150px);
+        }
+        .homepage-vector {
+            transform: translate(45px, 365px) scale(2.5);
+            transform-origin: top left;
+        }
+        .nigesh{
+            scale: 2.5;
+            transform: translateY(-150px) translateX(100px)
+        }
+        .portfolio{
+            scale: 2.5;
+            transform: translateY(-50px) translateX(480px);
+        }
+    }

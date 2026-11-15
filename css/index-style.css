@@ -98,6 +98,27 @@ hr{
     background-color: #675D54;
     margin-left:-100px;
 }
+body::selection{
+    color: #E5DFD3;
+    background-color: rgb(35,35,35,0.95);
+}
+.contact::selection, .contact *::selection,
+footer::selection, footer *::selection,
+.footer::selection, .footer *::selection {
+    color: #232323;
+    background-color: rgba(229, 223, 211, 0.90);
+}
+
+.contact a img, footer a img, .footer a img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.contact a img::selection,
+footer a img::selection,
+.footer a img::selection {
+    background: transparent;
+}
 
 /*ABOUT SECTION*/
 
@@ -543,9 +564,15 @@ hr{
     scale: 1.03;
     translate: 0px -1px;
 }
+.nontechnical-card-design{
+    transition: rotate 0.3s ease;
+}
+:is(.nontechnical-works-card:hover) .nontechnical-card-design{
+    rotate: 2deg;
+}
 .workspage-vector{
     position: absolute;
-    top: 0;
+    top: -11px;
     left: 0;
     opacity: 30%;
     z-index: -1;
@@ -567,9 +594,6 @@ hr{
     margin-top: -1385px;
     margin-left: 1060px;
     z-index: 0;
-}
-.workspage-vector .left-vector{
-    position: relative;
 }
 .workspage-vector .first.left-vector{
     position: relative;
@@ -806,7 +830,7 @@ hr{
 }
 .journeypage-vector{
     position: absolute;
-    top: 0;
+    top: 5px;
     left: 0;
     opacity: 30%;
     z-index: -1;
@@ -1173,3 +1197,1715 @@ nav a:hover{
 .location:has(a:hover) img{
     filter: opacity(100%)
 }
+
+/*RESPONSIVE STYLING*/
+
+/*GLOBAL*/
+:root{
+    --gutter: clamp(20px, 6.51vw, 100px);
+    --sec-w: calc(100vw - 2 * var(--gutter) - 16px);
+    --t: min(1px, calc(var(--sec-w) / 1420));
+    --hu: clamp(0.48px, 0.09vw, 1px);
+    --tc-h: 480px;
+    --ntc-h: 500px;
+}
+.journey-timeline{ 
+    position: relative; 
+    grid-template-columns: 33.4px minmax(0, 80%); 
+}
+.journey-vector{ 
+    display: block; 
+    position: relative; 
+    margin: 0 0 0 4.5px; 
+}
+.journey-vector svg{
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 28.9px;
+    height: 100%;
+    overflow: visible;
+}
+
+/*MOBILES & TABLETS (1100px and below)*/
+@media (max-width: 1100px){
+    :root{ 
+        --ntc-h: 560px; 
+    }
+    body{ 
+        overflow-x: hidden; 
+    }
+    img{ 
+        max-width: 100%; 
+    }
+    .about, .skills, .works, .journey{ 
+        position: relative; 
+    }
+    .about, .skills, .works, .journey, .contact-alignment{
+        margin-left: var(--gutter);
+        margin-right: var(--gutter);
+    }
+    :is(.about-header, .skills-header, .works-header, .journey-header, .contact-header) :is(.first, .second){
+        font-size: clamp(3rem, 9vw, 6.25rem);
+        letter-spacing: -0.07em;
+    }
+    :is(.about-header, .skills-header, .works-header, .contact-header) .second{
+        margin-top: -0.6em;
+    }
+
+    /*ABOUT SECTION*/
+    .about-content{ 
+        flex-direction: column; 
+        gap: 28px; 
+    }
+    .portrait{ 
+        width: 100%; 
+        max-width: 560px; 
+        height: auto; 
+        margin: 0 auto; 
+    }
+    .aboutpage-vector{
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: calc(240 * var(--hu));
+        overflow: visible;
+        visibility: visible;
+    }
+    .aboutpage-vector .vector{
+        position: absolute;
+        margin: 0;
+        top:  calc(20  * var(--hu));
+        left: calc(-37 * var(--hu));
+        width:  calc(500 * var(--hu));
+        height: calc(200 * var(--hu));
+    }
+
+    /*SKILLS SECTION*/
+    .skills-content{ 
+        column-gap: 40px; 
+        row-gap: 30px; 
+    }
+    .skillspage-vector{
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: 100%;
+        overflow: visible;
+        visibility: visible;
+    }
+    .skillspage-vector .vector{
+        position: absolute;
+        margin: 0;
+        width:  calc(1962 * var(--t));
+        height: calc(700  * var(--t));
+    }
+    .skillspage-vector .first { 
+        top: calc(48 * var(--t)); 
+        left: calc(-200 * var(--t)); 
+    }
+    .skillspage-vector .second{ 
+        top: calc(43 * var(--t)); 
+        left: calc(-215 * var(--t)); 
+    }
+    .skillspage-vector .third { 
+        top: calc(33 * var(--t)); 
+        left: calc(-230 * var(--t)); 
+    }
+
+    /*WORKS SECTION*/
+    .technically, .non-technically{
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        min-height: 0;
+    }
+    .technically > p, .non-technically > p{ 
+        grid-row: 1; 
+        grid-column: 1; 
+    }
+    .non-technically{ 
+        margin-top: 110px; 
+    }
+    .technical-works-card{ 
+        --cw: min(500px, 100%); 
+    }
+    .nontechnical-works-card{ 
+        --cw: min(1000px, 100%); 
+    }
+    .technical-works-card, .nontechnical-works-card{
+        position: relative;
+        grid-row: 2; 
+        grid-column: 1;
+        align-self: start;
+        justify-self: center;
+        width: var(--cw);
+        left: auto; 
+        right: auto;
+        top: auto;
+        height: auto;
+        transform: none;
+        padding-bottom: 24px;
+    }
+    .technical-links{ 
+        align-self: flex-end; 
+        margin: -80px 30px 0 0; 
+    }
+    .nontechnical-links{ 
+        align-self: flex-end; 
+        margin: -115px 30px 0 0; 
+    }
+    .nontechnical-card-content{ 
+        margin-right: 38%; 
+    }
+    .nontechnical-card-design{ 
+        margin-left: 0; 
+        left: auto; 
+        right: 30px; 
+        width: min(300px, 34%); 
+    }
+    .nontechnical-card-design svg, .nontechnical-card-design.project-2 svg{ 
+        width: 100%; 
+        height: auto; 
+    }
+    .workspage-vector{
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: 100%;
+        overflow: visible;
+        visibility: visible;
+    }
+    .workspage-vector .right-vector{ 
+        width: calc(387 * var(--t)); 
+        height: calc(1356 * var(--t)); 
+    }
+    .workspage-vector .left-vector { 
+        width: calc(389 * var(--t)); 
+        height: calc(1246 * var(--t)); 
+    }
+    .workspage-vector .first.right-vector { 
+        position: absolute; 
+        margin: 0; 
+        top: calc(-2 * var(--t)); 
+        left: calc(1000 * var(--t)); 
+    }
+    .workspage-vector .second.right-vector{ 
+        position: absolute; 
+        margin: 0; 
+        top: calc(-2 * var(--t)); 
+        left: calc(980 * var(--t)); 
+    }
+    .workspage-vector .third.right-vector { 
+        position: absolute; 
+        margin: 0; 
+        top: calc(-3 * var(--t)); 
+        left: calc(960 * var(--t)); 
+    }
+    .workspage-vector .first.left-vector  { 
+        position: absolute; 
+        margin: 0; 
+        top: auto; 
+        bottom: calc(-95 * var(--t)); 
+        left: calc(-100 * var(--t)); 
+    }
+    .workspage-vector .second.left-vector { 
+        position: absolute; 
+        margin: 0; 
+        top: auto;
+        bottom: calc(-95 * var(--t)); 
+        left: calc(-120 * var(--t)); 
+    }
+    .workspage-vector .third.left-vector  { 
+        position: absolute; 
+        margin: 0; 
+        top: auto; 
+        bottom: calc(-94 * var(--t)); 
+        left: calc(-140 * var(--t)); 
+    }
+
+    /*JOURNEY SECTION*/
+    .journey-content{ 
+        grid-template-columns: minmax(0, 1fr); 
+        gap: 50px; 
+    }
+    :is(.journey-card-certifications, .journey-card-internships, .journey-card-hackathons,
+        .journey-card-workshops, .journey-card-communities, .journey-card-achievements){
+        width: min(550px, 100%);
+        height: auto;
+        padding-bottom: 16px;
+    }
+    .journey-card-certifications{ 
+        min-height: 320px; 
+    }
+    .journey-card-internships{ 
+        min-height: 140px; 
+    }
+    .journey-card-hackathons{ 
+        min-height: 250px; 
+    }
+    .journey-card-workshops, .journey-card-communities, .journey-card-achievements{ 
+        min-height: 160px; 
+    }
+    .journey-subsection-item-content{ 
+        width: auto; 
+        max-width: 100%; 
+    }
+    .journeypage-vector{
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: calc(2159 * var(--t));
+        overflow-x: visible;
+        overflow-y: clip;
+        visibility: visible;
+    }
+    .journeypage-vector .vector{
+        position: absolute;
+        margin: 0;
+        width:  calc(1650 * var(--t));
+        height: calc(2259 * var(--t));
+    }
+    .journeypage-vector .first { 
+        top: calc(-100 * var(--t)); 
+        left: 0; 
+    }
+    .journeypage-vector .second{ 
+        top: calc(-101 * var(--t)); 
+        left: calc(-20 * var(--t)); 
+    }
+    .journeypage-vector .third { 
+        top: calc(-88 * var(--t)); 
+        left: calc(-40 * var(--t)); 
+    }
+
+    /*CONTACT SECTION*/
+    .contact-description p{ 
+        width: auto; 
+        max-width: 100%; 
+    }
+    .contact-content{ 
+        gap: 60px; 
+        flex-wrap: wrap; 
+        margin-top: 70px; 
+    }
+    .contactpage-vector{
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: 100%;
+        overflow: visible;
+        visibility: visible;
+    }
+    .contactpage-vector .first.vector,
+    .contactpage-vector .second.vector,
+    .contactpage-vector .third.vector{
+        position: absolute;
+        margin: 0;
+        top: 0;
+        width:  calc(600 * var(--t));
+        height: calc(600 * var(--t));
+    }
+    .contactpage-vector .first.vector { 
+        left: calc(550 * var(--t)); 
+    }
+    .contactpage-vector .second.vector{ 
+        left: calc(540 * var(--t)); 
+    }
+    .contactpage-vector .third.vector { 
+        left: calc(530 * var(--t)); 
+    }
+
+    /*FOOTER SECTION*/
+    .footer{ 
+        height: auto; 
+        flex-wrap: wrap; 
+        gap: 10px 40px; 
+        padding-bottom: 20px; 
+    }
+    nav{ 
+        margin-left: 30px; 
+        flex-wrap: wrap; 
+        row-gap: 6px; 
+    }
+    .copyrights{ 
+        margin-left: 0; 
+    }
+    .location{ 
+        margin-left: 30px; 
+    }
+    .skillspage-vector,
+    .workspage-vector,
+    .nontechnical-card-design,
+    .journeypage-vector,
+    .contactpage-vector{
+        display: hidden;
+        height: 0 !important;
+        overflow: hidden !important;
+        visibility: hidden !important;
+        pointer-events: none;
+    }
+}
+
+/*MOBILES & SMALL TABLETS (900px and below)*/
+@media (max-width: 900px){
+    :root{ 
+        --ntc-h: 900px; 
+    }
+
+    /*SKILLS SECTION*/
+    .skills-card{ 
+        width: 100%; 
+    }
+
+    /*WORKS SECTION*/
+    .nontechnical-card-content{ 
+        margin-right: 30px; 
+    }
+    .nontechnical-card-design{
+        position: static; 
+        width: min(300px, 60%);
+        margin: 16px auto 24px;
+    }
+
+    /*CONTACT SECTION*/
+    .contact-content{ 
+        flex-direction: column; 
+        gap: 40px; 
+    }
+
+    /*FOOTER SECTION*/
+    .footer{ 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 6px; 
+    }
+    nav{ 
+        margin: 20px 0 0 var(--gutter); 
+    }
+    .copyrights{ 
+        margin: 0 0 0 var(--gutter); 
+    }
+    .location{ 
+        margin: 10px 0 0 var(--gutter); 
+    }
+    .skillspage-vector,
+    .workspage-vector,
+    .nontechnical-card-design,
+    .journeypage-vector,
+    .contactpage-vector{
+        display: hidden;
+        height: 0 !important;
+        overflow: hidden !important;
+        visibility: hidden !important;
+        pointer-events: none;
+    }
+}
+
+/*MOBILES (700px and below)*/
+@media (max-width: 700px){
+    :root{ 
+        --tc-h: 580px; 
+        --ntc-h: 880px; 
+        --hu: clamp(0.384px, 0.13vw, 0.72px); 
+    }
+    .aboutpage-vector{
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(240 * var(--hu)) !important;
+        overflow: visible !important;
+        z-index: -1;
+        pointer-events: none;
+    }
+    .aboutpage-vector .vector{
+        display: block !important;
+        position: absolute;
+        margin: 0;
+        top: calc(20 * var(--hu));
+        left: calc(-37 * var(--hu));
+        width: calc(500 * var(--hu));
+        height: calc(200 * var(--hu));
+        transform: none;
+    }
+    :is(.about-header, .skills-header, .works-header, .journey-header, .contact-header) :is(.first, .second){
+        font-size: clamp(2.4rem, 13vw, 4.5rem);
+        -webkit-text-stroke-width: 1px;
+    }
+
+    /*SKILLS SECTION*/
+    .skills-content{
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-auto-rows: auto !important;
+        align-items: start;
+        column-gap: 16px !important;
+        row-gap: 32px !important;
+    }
+    .skills-content .skills-card{
+        width: 100% !important;
+        min-width: 0;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .skills-card .card-title{ 
+        font-size: 18px; 
+        line-height: 1.3;
+        margin: 0 0 12px 0;
+    }
+        .skills-card .card-content{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        position: static !important;
+        font-size: 14px;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    .skills-card .card-content ul{
+        position: static !important;
+        inset: auto !important;
+        float: none !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        columns: 1 !important;
+        column-count: 1 !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding-left: 18px !important;
+    }
+    .skills-card .card-content > ul > li{
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1.35;
+    }
+    .skills-hr{
+        margin-top: 30px; 
+    }
+
+    /*WORKS SECTION*/
+    .technically #techinically, .non-technically #non-techinically{ 
+        font-size: 24px; 
+    }
+    .non-technically{ 
+        margin-top: 80px; 
+    }
+    .works-hr{ 
+        margin-top: 40px; 
+    }
+    .technical-works-card, .nontechnical-works-card{ 
+        --cw: 100%; 
+    }
+    .technical-cardheader, .nontechnical-cardheader{ 
+        margin-left: 20px; 
+    }
+    .technical-cardheader .sno, .nontechnical-cardheader .sno{ 
+        font-size: 40px; 
+    }
+    .technical-cardheader .title, .nontechnical-cardheader .title{
+        font-size: 26px;
+        margin-top: 14px; 
+        margin-left: 10px;
+    }
+    .type{ 
+        font-size: 24px; 
+        margin: -6px 0 0 20px; 
+    }
+    .technical-links, .nontechnical-links{
+        flex-direction: row; 
+        gap: 16px;
+        align-self: flex-start; 
+        margin: 6px 20px 0;
+    }
+    .technical-card-content{ 
+        margin: 14px 20px 0; 
+    }
+    .nontechnical-card-content{ 
+        margin: 14px 20px 0; 
+    }
+    :is(.technical-card-content, .nontechnical-card-content) .description{
+        font-size: 14px; 
+        line-height: 1.45; 
+        text-align: left;
+    }
+    :is(.technical-card-content, .nontechnical-card-content) :is(h6, p){ 
+        font-size: 14px; 
+    }
+    :is(.technical-card-content, .nontechnical-card-content) .role{ 
+        margin-top: 16px; 
+    }
+    :is(.technical-card-content, .nontechnical-card-content) .description{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    :is(.technical-card-content, .nontechnical-card-content) .description{
+        cursor: pointer;
+    }
+    :is(.technical-card-content, .nontechnical-card-content) .description.expanded{
+        display: block;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+        overflow: visible;
+    }
+
+    /*JOURNEY SECTION*/
+    .journey-header .first{ 
+        margin-bottom: 0; 
+    }
+    .journey-timeline{ 
+        grid-template-columns: 33.4px minmax(0, 1fr); 
+    }
+    .journey-section{ 
+        border-left: none; 
+        padding-left: 0; 
+    }
+    .journey-section-title{ 
+        font-size: 26px; 
+    }
+    .journey-section-description{ 
+        margin-left: 0; 
+    }
+    .journey-subsection{ 
+        margin-left: 20px; 
+    }
+    .journey-subsection-title, .journey-subsection-title p{ 
+        font-size: 20px; 
+    }
+    .journey-subsection-item-title{ 
+        margin-left: 12px; 
+        font-size: 18px; 
+    }
+    .journey-subsection-item-content{ 
+        width: auto; 
+        max-width: 100%; 
+        margin-left: 28px; 
+    }
+    .card-title{ 
+        font-size: 28px; 
+    }
+    .journey-hr{ 
+        margin-top: 40px; 
+    }
+
+    /*CONTACT SECTION*/
+    .contact-description{ 
+        margin-left: 0; 
+    }
+    .contact-description p{ 
+        font-size: 17px; 
+    }
+    .contact a{ 
+        margin-left: 0; 
+    }
+    .contact-content{ 
+        margin-top: 50px; 
+    }
+    .social-links{ 
+        margin-left: 0; 
+    }
+    .links{
+        margin-left: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(7, auto);
+        grid-auto-flow: column;
+        gap: 12px 16px;
+    }
+    .links a{ 
+        font-size: 14px; 
+    }
+    .contact-form form{ 
+        width: 100%; 
+        max-width: 500px; 
+    }
+    .contact-form .first-details{ 
+        flex-direction: column; 
+    }
+    .contact-form input, .contact-form textarea{ 
+        box-sizing: border-box; 
+        width: 100%; 
+    }
+    .last{ 
+        gap: 20px; 
+    }
+    .contact-hr{ 
+        margin-top: 40px; 
+    }
+    nav{
+        display: flex;
+        flex-wrap: nowrap !important;
+        gap: clamp(8px, 3vw, 16px);
+        margin: 20px var(--gutter) 0 var(--gutter) !important;
+    }
+    nav ul{
+        display: flex;
+        flex-wrap: nowrap;
+        gap: clamp(8px, 3vw, 16px);
+        margin: 0;
+        padding: 0;
+    }
+    nav a{
+        font-size: clamp(10px, 3.2vw, 14px);
+        white-space: nowrap;
+    }
+    .copyrights{
+        margin-top: 10px;
+    }
+}
+
+/*SMALL & REGULAR MOBILES (480px and below)*/
+@media (max-width: 480px){
+    .skills-card .card-content > ul{ 
+        grid-template-columns: minmax(0, 1fr); 
+    }
+    .card-content{ 
+        font-size: 14px; 
+    }
+}
+
+    /*SMALL MOBILES*/
+        /*IPHONE SE 375 x 667*/
+        @media (min-width: 361px) and (max-width: 380px) {
+            .about img{
+                transform: translateX(-50px);
+            }
+
+        }
+
+    /*MOBILES*/
+        /*SAMSUNG GALAXY A55 360 x 800*/
+        @media (max-width: 360px) {
+            .about img{
+                transform: translateX(-50px);
+            }
+        }
+        /*IPHONE 16 393 x 852*/
+        @media (min-width: 381px) and (max-width: 400px) {
+            .about img{
+                transform: translateX(-50px);
+            }
+        }
+        /*PIXEL 9 & 10 412 x 924*/
+        @media (min-width: 401px) and (max-width: 420px) {
+            .about img{
+                transform: translateX(-50px);
+            }
+        }
+        /*PIXEL 9 PRO 427 x 952 & IPHONE 16 PRO MAX 440 x 956*/
+        @media (min-width: 421px) and (max-width: 480px) {
+            .about img{
+                transform: translateX(-50px);
+            }
+        }
+
+    /*TABLETS*/
+
+    /*TABLETS (481px - 1100px)*/
+    @media (min-width: 481px) and (max-width: 1100px) {
+        .contact-form{
+            width: 100%;
+            min-width: 0;
+        }
+        .contact-form form{
+            width: 100%;
+            max-width: none;
+        }
+        .contact-form .first-details{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .contact-form .first-details > *{
+            flex: 1 1 0;
+            min-width: 0;
+        }
+        .contact-form input,
+        .contact-form textarea{
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .footer{
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        nav{
+            margin: 20px 0 0 var(--gutter);
+        }
+        .copyrights{
+            margin: 0 0 0 var(--gutter);
+            text-align: left;
+        }
+        .location{
+            flex: none;
+            margin: 10px 0 0 var(--gutter);
+        }
+    }
+
+    /*IPAD MINI 768 x 1024*/
+    @media (min-width: 481px) and (max-width: 768px) {
+        .about img{
+            transform: translateX(-100px);
+        }
+        .skills-content{
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            grid-auto-rows: auto !important;
+            align-items: start;
+            column-gap: 24px !important;
+            row-gap: 32px !important;
+        }
+        .skills-content .skills-card{
+            width: 100% !important;
+            min-width: 0;
+            height: auto !important;
+            min-height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .skills-card .card-title{
+            font-size: 22px;
+            line-height: 1.3;
+            margin: 0 0 12px 0;
+        }
+        .skills-card .card-content{
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            position: static !important;
+            font-size: 16px;
+            margin: 0 !important;
+            width: 100% !important;
+        }
+        .skills-card .card-content ul{
+            position: static !important;
+            inset: auto !important;
+            float: none !important;
+            transform: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            columns: 1 !important;
+            column-count: 1 !important;
+            width: 100% !important;
+            height: auto !important;
+            margin: 0 !important;
+            padding-left: 18px !important;
+        }
+        .skills-content{
+            row-gap: 20px !important;
+        }
+        .skills-card .card-content ul > li{
+            margin: 0 !important;
+            padding: 0 !important;
+            height: auto !important;
+            min-height: 0 !important;
+            line-height: 1.4;
+        }
+        .journey-content{
+            grid-template-columns: minmax(0, 1fr);
+            gap: 30px;
+        }
+        :is(.journey-card-certifications, .journey-card-internships, .journey-card-hackathons,
+            .journey-card-workshops, .journey-card-communities, .journey-card-achievements){
+            width: 100%;
+            min-height: 0;
+        }
+        .copyrights{
+            margin-top: 20px;
+        }
+    }
+
+    /*SURFACE PRO 10 960 x 1440*/
+    @media (min-width: 769px) and (max-width: 960px) {
+        .about img{
+            transform: translateX(-100px);
+        }
+        .nontechnical-card-content{
+            margin-right: 34%;
+        }
+        .nontechnical-card-design{
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            overflow: visible !important;
+            position: absolute;
+            float: none;
+            top: 60px;
+            right: 30px;
+            left: auto;
+            width: min(250px, 28%);
+            height: auto !important;
+            aspect-ratio: 1 / 1;
+            z-index: 1;
+        }
+        .nontechnical-card-design svg,
+        .nontechnical-card-design.project-2 svg{
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+        .journey-content{
+            grid-template-columns: minmax(0, 1fr);
+            gap: 40px;
+            align-items: start;
+        }
+        :is(.journey-card-certifications, .journey-card-internships, .journey-card-hackathons,
+            .journey-card-workshops, .journey-card-communities, .journey-card-achievements){
+            width: 100%;
+            min-height: 0;
+        }
+        .contact-content{
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .contact-form{ 
+            flex: 1 1 55%; 
+        }
+        .social-links{ 
+            flex: 1 1 40%; 
+            min-width: 0; 
+            margin-left: 0; 
+        }
+        .links{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: repeat(7, auto);
+            grid-auto-flow: column;
+            gap: 12px 24px;
+            margin-left: 0;
+        }
+        .footer{
+            row-gap: 0;
+        }
+        .footer .copyrights{
+            margin-top: 20px;
+        }
+    }
+
+    /*IPAD PRO 13 1032 x 1376 (1100px breakpoint)*/
+    @media (min-width: 961px) and (max-width: 1100px) {
+        .about img{
+            transform: translateX(-100px);
+        }
+        .nontechnical-card-design{
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            overflow: visible !important;
+            position: absolute;
+            float: none;
+            top: 24px;
+            right: 30px;
+            left: auto;
+            width: min(300px, 34%);
+            height: auto !important;
+            aspect-ratio: 1 / 1;
+            z-index: 1;
+        }
+        .nontechnical-card-design svg,
+        .nontechnical-card-design.project-2 svg{
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+        .journey-content{
+            grid-template-columns: minmax(0, 1fr);
+            gap: 40px;
+            align-items: start;
+        }
+        :is(.journey-card-certifications, .journey-card-internships, .journey-card-hackathons,
+            .journey-card-workshops, .journey-card-communities, .journey-card-achievements){
+            width: 100%;
+            min-height: 0;
+        }
+        .contact-content{
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+        }
+        .contact-form{ 
+            flex: 1 1 55%; 
+        }
+        .social-links{ 
+            flex: 1 1 40%; 
+            min-width: 0; 
+            margin-left: 0; 
+        }
+        .links{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: repeat(7, auto);
+            grid-auto-flow: column;
+            gap: 12px 24px;
+            margin-left: 0;
+        }
+        .footer .copyrights{
+            margin-top: 20px;
+        }
+    }
+
+    /*DESKTOPS*/
+    @media (min-width: 1101px) {
+        :root{
+        --u: calc(100vw / 1536);
+        }
+
+        /*CONSTANT STYLING*/
+        hr{
+            height: calc(2 * var(--u));
+            margin-left: calc(-100 * var(--u));
+        }
+
+        /*ELEMENTS WITHOUT A FIXED SIZE IN THE BASE STYLES*/
+        body{
+            font-size: max(12px, calc(16 * var(--u)));
+        }
+        :is(.technical-card-content, .nontechnical-card-content) h6{
+            font-size: max(10px, calc(10.72 * var(--u)));
+        }
+        .contact-form input,
+        .contact-form textarea,
+        .last #submit-button{
+            font-size: max(12px, calc(13.33 * var(--u)));
+        }
+
+        /*ABOUT SECTION*/
+        .about{
+            margin-left: calc(100 * var(--u));
+        }
+        .about-header{
+            margin-top: calc(20 * var(--u));
+        }
+        .about-header .first{
+            font-size: calc(100 * var(--u));
+            letter-spacing: calc(-7 * var(--u));
+            -webkit-text-stroke: calc(2 * var(--u)) #232323;
+        }
+        .about-header .second{
+            font-size: calc(100 * var(--u));
+            letter-spacing: calc(-7 * var(--u));
+            margin-top: calc(-60 * var(--u));
+        }
+        .content{
+            gap: calc(10 * var(--u));
+        }
+        .content b:hover{
+            transform: scale(1.01) translateY(calc(-1 * var(--u)));
+        }
+        .portrait{
+            width: calc(700 * var(--u));
+            height: calc(645 * var(--u));
+            margin-top: calc(-210 * var(--u));
+            margin-right: calc(80 * var(--u));
+        }
+        .aboutpage-vector{
+            width: calc(700 * var(--u));
+            height: calc(200 * var(--u));
+        }
+        .aboutpage-vector .vector{
+            width: calc(500 * var(--u));
+            height: calc(200 * var(--u));
+            margin-left: calc(63 * var(--u));
+            margin-top: calc(20 * var(--u));
+        }
+        .about-hr{
+            margin-top: calc(-1 * var(--u));
+        }
+
+        /*SKILLS SECTION*/
+        .skills{
+            margin-left: calc(100 * var(--u));
+        }
+        .skills-header .first{
+            font-size: calc(100 * var(--u));
+            letter-spacing: calc(-7 * var(--u));
+            -webkit-text-stroke: calc(2 * var(--u)) #232323;
+        }
+        .skills-header .second{
+            font-size: calc(100 * var(--u));
+            letter-spacing: calc(-7 * var(--u));
+            margin-top: calc(-60 * var(--u));
+            -webkit-text-stroke: calc(2 * var(--u)) #232323;
+        }
+        .skills-content{
+            column-gap: calc(60 * var(--u));
+            row-gap: calc(20 * var(--u));
+        }
+        .skills-card .card-title{
+            font-size: calc(25 * var(--u));
+            letter-spacing: calc(-1 * var(--u));
+        }
+        .skills-card .card-content{
+            font-size: max(12px, calc(20 * var(--u)));
+            margin-top: calc(10 * var(--u));
+            margin-left: calc(40 * var(--u));
+        }
+        .skills-card .card-content > ul{
+            column-gap: calc(50 * var(--u));
+        }
+        .skills-card .card-content .programming > ul{
+            grid-template-columns: calc(150 * var(--u)) calc(50 * var(--u));
+            margin-top: calc(-15 * var(--u));
+        }
+        .skills-card .card-content.tools-platform > ul > li{
+            margin-bottom: calc(30 * var(--u));
+        }
+        .skills-card .card-content.soft-skills > ul > li{
+            margin-bottom: calc(15 * var(--u));
+        }
+        .skills-card .card-content:hover{
+            transform: translatex(calc(5 * var(--u)));
+        }
+        .skillspage-vector .vector{
+            height: calc(700 * var(--u));
+            margin-top: calc(740 * var(--u));
+            margin-left: calc(-100 * var(--u));
+        }
+        .skillspage-vector .second{
+            top: calc(-5 * var(--u));
+            left: calc(-15 * var(--u));
+        }
+        .skillspage-vector .third{
+            top: calc(-15 * var(--u));
+            left: calc(-30 * var(--u));
+        }
+        .skills-hr{
+            margin-top: calc(50 * var(--u));
+        }
+
+        /*WORKS SECTION*/
+        .works{
+            margin-left: calc(100 * var(--u));
+        }
+        .works-header .first{
+            font-size: calc(100 * var(--u));
+            letter-spacing: calc(-7 * var(--u));
+            -webkit-text-stroke: calc(2 * var(--u)) #232323;
+        }
+        .works-header .second{
+            font-size: calc(100 * var(--u));
+            letter-spacing: calc(-7 * var(--u));
+            margin-top: calc(-60 * var(--u));
+            -webkit-text-stroke: calc(2 * var(--u)) #232323;
+        }
+        .technically{
+            min-height: calc(600 * var(--u));
+        }
+        .technically #techinically{
+            font-size: calc(32 * var(--u));
+            letter-spacing: calc(-1 * var(--u));
+        }
+        .technical-works-card{
+            box-shadow: calc(-6 * var(--u)) calc(8 * var(--u)) calc(1 * var(--u)) calc(2 * var(--u)) #23232340;
+            border-radius: calc(5 * var(--u));
+            width: calc(500 * var(--u));
+            height: calc(480 * var(--u));
+            margin-top: calc(70 * var(--u));
+            top: 0;
+        }
+        .technical-cardheader{
+            margin-left: calc(30 * var(--u));
+            margin-top: calc(10 * var(--u));
+        }
+        .technical-cardheader .sno{
+            font-size: calc(64 * var(--u));
+        }
+        .technical-cardheader .title{
+            font-size: calc(40 * var(--u));
+            margin-top: calc(27.5 * var(--u));
+            margin-left: calc(13 * var(--u));
+            letter-spacing: calc(-1 * var(--u));
+        }
+        .technical-links{
+            margin-left: calc(400 * var(--u));
+            margin-top: calc(-80 * var(--u));
+        }
+        .technical-links #arrow{
+            width: calc(8 * var(--u));
+            height: calc(8 * var(--u));
+            margin-left: calc(3 * var(--u));
+        }
+        .technical-links a:hover #arrow{
+            transform: translate(calc(1 * var(--u)), calc(-1 * var(--u)));
+        }
+        .technical-card-content{
+            margin-top: calc(40 * var(--u));
+            margin-left: calc(30 * var(--u));
+            margin-right: calc(30 * var(--u));
+        }
+        .technical-card-content .role{
+            margin-top: calc(30 * var(--u));
+        }
+        .technical-card-content .role h6{
+            -webkit-text-stroke: calc(0.5 * var(--u)) #232323;
+            letter-spacing: calc(1 * var(--u));
+        }
+        .technical-card-content .role p{
+            margin-left: calc(5 * var(--u));
+            margin-top: calc(-1.5 * var(--u));
+        }
+        .technical-card-content .status{
+            margin-top: calc(-5 * var(--u));
+        }
+        .technical-card-content .status h6{
+            -webkit-text-stroke: calc(0.5 * var(--u)) #232323;
+            letter-spacing: calc(1 * var(--u));
+            margin-top: calc(-1 * var(--u));
+        }
+        .technical-card-content .status p{
+            margin-left: calc(5 * var(--u));
+            margin-top: calc(-2.5 * var(--u));
+        }
+        .technical-works-card.top:hover{
+            translate: 0 calc(-1 * var(--u));
+        }
+        .non-technically{
+            margin-top: calc(150 * var(--u));
+            min-height: calc(600 * var(--u));
+        }
+        .non-technically #non-techinically{
+            font-size: calc(32 * var(--u));
+            letter-spacing: calc(-1 * var(--u));
+        }
+        .nontechnical-works-card{
+            box-shadow: calc(-6 * var(--u)) calc(8 * var(--u)) calc(1 * var(--u)) calc(2 * var(--u)) #23232340;
+            border-radius: calc(5 * var(--u));
+            width: calc(1000 * var(--u));
+            height: calc(500 * var(--u));
+            margin-top: calc(70 * var(--u));
+            top: 0;
+        }
+        .nontechnical-cardheader{
+            margin-left: calc(30 * var(--u));
+            margin-top: calc(10 * var(--u));
+        }
+        .nontechnical-cardheader .sno{
+            font-size: calc(64 * var(--u));
+        }
+        .nontechnical-cardheader .title{
+            font-size: calc(40 * var(--u));
+            margin-top: calc(27.5 * var(--u));
+            margin-left: calc(13 * var(--u));
+            letter-spacing: calc(-1 * var(--u));
+        }
+        .type{
+            font-size: calc(40 * var(--u));
+            margin-top: calc(-20 * var(--u));
+            margin-left: calc(112 * var(--u));
+        }
+        .nontechnical-links{
+            margin-left: calc(880 * var(--u));
+            margin-top: calc(-115 * var(--u));
+        }
+        .nontechnical-links #arrow{
+            width: calc(8 * var(--u));
+            height: calc(8 * var(--u));
+            margin-left: calc(3 * var(--u));
+        }
+        .nontechnical-links a:hover #arrow{
+            transform: translate(calc(1 * var(--u)), calc(-1 * var(--u)));
+        }
+        .nontechnical-card-content{
+            margin-top: calc(120 * var(--u));
+            margin-left: calc(30 * var(--u));
+            margin-right: calc(390 * var(--u));
+        }
+        .nontechnical-card-content .role{
+            margin-top: calc(30 * var(--u));
+        }
+        .nontechnical-card-content .role h6{
+            -webkit-text-stroke: calc(0.5 * var(--u)) #232323;
+            letter-spacing: calc(1 * var(--u));
+        }
+        .nontechnical-card-content .role p{
+            margin-left: calc(5 * var(--u));
+            margin-top: calc(-1.5 * var(--u));
+        }
+        .nontechnical-card-content .status{
+            margin-top: calc(-5 * var(--u));
+        }
+        .nontechnical-card-content .status h6{
+            -webkit-text-stroke: calc(0.5 * var(--u)) #232323;
+            letter-spacing: calc(1 * var(--u));
+            margin-top: calc(-1 * var(--u));
+        }
+        .nontechnical-card-content .status p{
+            margin-left: calc(5 * var(--u));
+            margin-top: calc(-2.5 * var(--u));
+        }
+        .nontechnical-card-design{
+            margin-left: calc(650 * var(--u));
+            margin-top: calc(100 * var(--u));
+        }
+        .nontechnical-card-design.project-2 svg{
+            width: calc(300 * var(--u));
+            height: calc(300 * var(--u));
+        }
+        .nontechnical-works-card.top:hover{
+            translate: 0 calc(-1 * var(--u));
+        }
+        .workspage-vector .first.right-vector{
+            margin-top: calc(1480 * var(--u));
+            margin-left: calc(1100 * var(--u));
+        }
+        .workspage-vector .second.right-vector{
+            margin-top: calc(-1356 * var(--u));
+            margin-left: calc(1080 * var(--u));
+        }
+        .workspage-vector .third.right-vector{
+            margin-top: calc(-1385 * var(--u));
+            margin-left: calc(1060 * var(--u));
+        }
+        .workspage-vector .first.left-vector{
+            margin-top: calc(-939 * var(--u));
+        }
+        .workspage-vector .second.left-vector{
+            margin-top: calc(-1246 * var(--u));
+            margin-left: calc(-20 * var(--u));
+        }
+        .workspage-vector .third.left-vector{
+            margin-top: calc(-1275 * var(--u));
+            margin-left: calc(-40 * var(--u));
+        }
+        .workspage-vector .right-vector{
+            width: calc(387 * var(--u));
+            height: calc(1356 * var(--u));
+            top: calc(12 * var(--u) + 0.5px);
+        }
+        .workspage-vector .left-vector{
+            width: calc(389 * var(--u));
+            height: calc(1246 * var(--u));
+            top: calc(16 * var(--u));
+        }
+        .works-hr{
+            margin-top: calc(80 * var(--u));
+        }
+
+        /*JOURNEY SECTION*/
+        .journey{
+            margin-left: calc(100 * var(--u));
+            margin-top: calc(-16 * var(--u));
+        }
+        .journey-header .first{
+            font-size: calc(100 * var(--u));
+            letter-spacing: calc(-7 * var(--u));
+            -webkit-text-stroke: calc(2 * var(--u)) #232323;
+        }
+        .journey-content{
+            gap: calc(100 * var(--u));
+            margin-top: calc(40 * var(--u));
+        }
+        .journey-vector{
+            margin-left: calc(4.5 * var(--u));
+            margin-top: calc(-10 * var(--u));
+        }
+        
+        .journey-section{
+            gap: calc(15 * var(--u));
+        }
+        .journey-section-title{
+            font-size: calc(32 * var(--u));
+            letter-spacing: calc(-1 * var(--u));
+        }
+        .journey-section-description{
+            font-size: max(12px, calc(16 * var(--u)));
+            margin-left: calc(40 * var(--u));
+        }
+        .journey-subsection{
+            gap: calc(10 * var(--u));
+            margin-left: calc(40 * var(--u));
+        }
+        .thirdsem{
+            margin-top: calc(-20 * var(--u));
+        }
+        .journey-subsection-title{
+            font-size: calc(24 * var(--u));
+            letter-spacing: calc(-1 * var(--u));
+            gap: calc(10 * var(--u));
+        }
+        .journey-subsection:has(.journey-subsection-item:hover) .journey-subsection-title{
+            transform: translatex(calc(5 * var(--u)));
+        }
+        .journey-subsection-title p{
+            font-size: calc(24 * var(--u));
+            letter-spacing: calc(-1 * var(--u));
+        }
+        .journey-subsection-item{
+            gap: calc(10 * var(--u));
+        }
+        .journey-subsection-item-title{
+            font-size: max(12px, calc(20 * var(--u)));
+            letter-spacing: calc(-1 * var(--u));
+            margin-left: calc(40 * var(--u));
+        }
+        .journey-subsection-item-content{
+            width: calc(500 * var(--u));
+            font-size: max(12px, calc(16 * var(--u)));
+            margin-left: calc(80 * var(--u));
+        }
+        .journey-subsection-item:hover{
+            transform: translatex(calc(5 * var(--u)));
+        }
+        .journey-subsection-item-content ul{
+            gap: calc(3 * var(--u));
+        }
+        .journey-cards{
+            gap: calc(20 * var(--u));
+        }
+        .journey-card:hover{
+            transform: scale(1.03) translateY(calc(-1 * var(--u)));
+        }
+        .journey-card-certifications{
+            border-radius: calc(5 * var(--u));
+            width: calc(550 * var(--u));
+            height: calc(320 * var(--u));
+        }
+        .journey-card-internships{
+            border-radius: calc(5 * var(--u));
+            width: calc(550 * var(--u));
+            height: calc(140 * var(--u));
+        }
+        .journey-card-hackathons{
+            border-radius: calc(5 * var(--u));
+            width: calc(550 * var(--u));
+            height: calc(250 * var(--u));
+        }
+        .journey-card-workshops{
+            border-radius: calc(5 * var(--u));
+            width: calc(550 * var(--u));
+            height: calc(160 * var(--u));
+        }
+        .journey-card-communities{
+            border-radius: calc(5 * var(--u));
+            width: calc(550 * var(--u));
+            height: calc(160 * var(--u));
+        }
+        .journey-card-achievements{
+            border-radius: calc(5 * var(--u));
+            width: calc(550 * var(--u));
+            height: calc(160 * var(--u));
+        }
+        .card-title{
+            font-size: calc(40 * var(--u));
+            margin-top: calc(10 * var(--u));
+            margin-left: calc(20 * var(--u));
+            letter-spacing: calc(-1 * var(--u));
+        }
+        .card-content{
+            font-size: max(12px, calc(15 * var(--u)));
+            margin-left: calc(10 * var(--u));
+            margin-top: calc(-5 * var(--u));
+        }
+        .journeypage-vector{
+            translate: 0 calc(-3 * var(--u));
+        }
+        .journeypage-vector .vector{
+            width: calc(1650 * var(--u));
+            height: calc(2259 * var(--u));
+        }
+        .journeypage-vector .second{
+            margin-top: calc(-2260 * var(--u));
+            margin-left: calc(-20 * var(--u));
+        }
+        .journeypage-vector .third{
+            margin-top: calc(-2260 * var(--u));
+            margin-left: calc(-40 * var(--u));
+        }
+        .journey-hr{
+            margin-top: calc(70 * var(--u));
+        }
+
+        /*CONTACT SECTION*/
+        .contact{
+            margin-top: calc(-17 * var(--u));
+        }
+        .contact-alignment{
+            margin-left: calc(100 * var(--u));
+        }
+        .contact-header .first{
+            font-size: calc(100 * var(--u));
+            letter-spacing: calc(-7 * var(--u));
+            -webkit-text-stroke: calc(2 * var(--u)) #FBF7F4;
+        }
+        .contact-header .second{
+            font-size: calc(100 * var(--u));
+            letter-spacing: calc(-7 * var(--u));
+            margin-top: calc(-60 * var(--u));
+            -webkit-text-stroke: calc(2 * var(--u)) #FBF7F4;
+        }
+        .contact-description{
+            margin-left: calc(40 * var(--u));
+        }
+        .contact-description p{
+            width: calc(1250 * var(--u));
+            font-size: max(12px, calc(20 * var(--u)));
+        }
+        .contact a{
+            margin-left: calc(40 * var(--u));
+        }
+        .contact #arrow{
+            width: calc(8 * var(--u));
+            height: calc(8 * var(--u));
+        }
+        .contact a:hover #arrow{
+            transform: translate(calc(1 * var(--u)), calc(-1 * var(--u)));
+        }
+        .contact-content{
+            gap: calc(150 * var(--u));
+            margin-top: calc(100 * var(--u));
+        }
+        .social-links{
+            gap: calc(8 * var(--u));
+            margin-left: calc(40 * var(--u));
+        }
+        .social-links p{
+            font-size: max(12px, calc(20 * var(--u)));
+        }
+        .links{
+            gap: calc(10 * var(--u)) calc(30 * var(--u));
+            margin-left: calc(40 * var(--u));
+        }
+        .link{
+            gap: calc(8 * var(--u));
+        }
+        .links img{
+            width: calc(21 * var(--u));
+            height: calc(21 * var(--u));
+            margin-top: calc(-3 * var(--u));
+            margin-right: calc(10 * var(--u));
+        }
+        .links a{
+            font-size: max(12px, calc(20 * var(--u)));
+        }
+        .link a:hover{
+            transform: scale(1.01) translateY(calc(-1 * var(--u)));
+        }
+        .contact-form form{
+            gap: calc(15 * var(--u));
+            width: calc(500 * var(--u));
+            margin-top: calc(52 * var(--u));
+        }
+        .contact-form .first-details{
+            gap: calc(10 * var(--u));
+        }
+        .contact-form label{
+            font-size: max(12px, calc(20 * var(--u)));
+        }
+        .contact-form input{
+            text-indent: calc(5 * var(--u));
+            border-radius: calc(2 * var(--u));
+            margin-top: calc(5 * var(--u));
+        }
+        .contact-form input::placeholder{
+            font-size: max(12px, calc(16 * var(--u)));
+            text-indent: calc(5 * var(--u));
+        }
+        .contact-form input:-webkit-autofill,
+        .contact-form input:-webkit-autofill:hover,
+        .contact-form input:-webkit-autofill:focus{
+            -webkit-box-shadow: 0 0 0 calc(1000 * var(--u)) #A39383 inset;
+        }
+        .first input{
+            width: calc(230 * var(--u));
+        }
+        .second input{
+            width: calc(260 * var(--u));
+        }
+        .contact-form textarea{
+            text-indent: calc(5 * var(--u));
+            border-radius: calc(2 * var(--u));
+            height: calc(100 * var(--u));
+            margin-top: calc(5 * var(--u));
+        }
+        .contact-form textarea::placeholder{
+            font-size: max(12px, calc(16 * var(--u)));
+            text-indent: calc(5 * var(--u));
+        }
+        .last{
+            height: calc(25 * var(--u));
+            gap: calc(90 * var(--u));
+        }
+        .last #form-error{
+            font-size: max(12px, calc(18 * var(--u)));
+            border-radius: calc(2 * var(--u));
+        }
+        .last #submit-button{
+            letter-spacing: calc(0.5 * var(--u));
+            border-radius: calc(2 * var(--u));
+        }
+        .error-message{
+            font-size: max(12px, calc(13 * var(--u)));
+        }
+        .contactpage-vector .vector{
+            width: calc(600 * var(--u));
+            height: calc(600 * var(--u));
+            margin-left: calc(550 * var(--u));
+        }
+        .contactpage-vector .second.vector{
+            margin-left: calc(540 * var(--u));
+        }
+        .contactpage-vector .third.vector{
+            margin-left: calc(530 * var(--u));
+        }
+        .contact-hr{
+            margin-top: calc(70 * var(--u));
+        }
+
+        /*FOOTER SECTION*/
+        .footer{
+            height: calc(80 * var(--u));
+            margin-top: calc(-20 * var(--u));
+            gap: calc(300 * var(--u));
+        }
+        nav{
+            column-gap: calc(30 * var(--u));
+            margin-top: calc(30 * var(--u));
+            margin-left: calc(50 * var(--u));
+        }
+        nav a:hover{
+            transform: scale(1.01) translateY(calc(-1 * var(--u)));
+        }
+        .copyrights{
+            margin-top: calc(15 * var(--u));
+            margin-left: calc(-100 * var(--u));
+        }
+        .copyrights p:nth-child(1){
+            margin-left: calc(-3 * var(--u));
+        }
+        .copyrights p:nth-child(2){
+            margin-top: calc(-10 * var(--u));
+        }
+        .location{
+            margin-top: calc(30 * var(--u));
+            margin-left: calc(50 * var(--u));
+        }
+        .location a:hover{
+            transform: scale(1.01) translateY(calc(-1 * var(--u)));
+        }
+    }
+        /*SMALL LAPTOP 1280 x 720 (1101px - 1439px)*/
+        @media (min-width: 1101px) and (max-width: 1365px) {
+            .workspage-vector .right-vector{
+                translate: 0 calc(6.5 * var(--u));
+            }
+            .workspage-vector .left-vector{
+                translate: 0 calc(7 * var(--u));
+            }
+            .nontechnical-card-design.project-1{
+                scale: 0.8;
+                translate: calc(-20 * var(--u)) calc(-20 * var(--u));
+            }
+            .journeypage-vector{
+                translate: 0 calc(-6 * var(--u));
+            }
+        }
+        /*LAPTOP 1366 x 768 (1366px - 1439px)*/
+        @media (min-width: 1366px) and (max-width: 1439px){
+            .workspage-vector .right-vector{
+                translate: 0 calc(2 * var(--u));
+            }
+            .workspage-vector .left-vector{
+                translate: 0 calc(0 * var(--u));
+            }
+            .journeypage-vector{
+                translate: 0 calc(-5 * var(--u));
+            }
+        }
+        /*MACBOOK 1440 x 900 (1440px - 1919px)*/
+        @media (min-width: 1440px) and (max-width: 1919px) {
+            .workspage-vector .right-vector{
+                translate: 0 calc(-2 * var(--u));
+            }
+            .workspage-vector .left-vector{
+                translate: 0 calc(-5 * var(--u));
+            }
+            .journeypage-vector{
+                translate: 0 calc(-5 * var(--u));
+            }
+        }
+        /*FULL HD DESKTOP 1920 x 1080 (1920px - 2559px)*/
+        @media (min-width: 1920px) and (max-width: 2559px) {
+            .skillspage-vector{
+                translate: calc(100 * var(--u)) 0;
+            }
+            .nontechnical-card-design{
+                translate: calc(40 * var(--u)) calc(30 * var(--u));
+            }
+            .nontechnical-card-design.project-2{
+                translate: calc(0 * var(--u)) calc(30 * var(--u));
+            }
+            .workspage-vector .right-vector{
+                translate: 0 calc(-22 * var(--u));
+            }
+            .workspage-vector .left-vector{
+                translate: 0 calc(-28 * var(--u));
+            }
+            .journeypage-vector{
+                translate: 0 calc(0.5 * var(--u));
+            }
+        }
+        /*QHD DESKTOP 2560 x 1440 (2560px - 3839px)*/
+        @media (min-width: 2560px) and (max-width: 3839px) {
+            .skillspage-vector{
+                scale: 1.8 1;
+            transform-origin: left center;
+            }
+            .nontechnical-card-design.project-1{
+                scale: 1.6;
+                translate: calc(70 * var(--u)) calc(50 * var(--u));
+            }
+            .workspage-vector .right-vector{
+                translate: 0 calc(-35 * var(--u));
+            }
+            .workspage-vector .left-vector{
+                translate: 0 calc(-46 * var(--u));
+            }
+            .journeypage-vector{
+                translate: 0 calc(5 * var(--u));
+            }
+        }
+        /*4K DESKTOP 3840 x 2160*/
+        @media (min-width: 3840px) {
+            .skillspage-vector{
+                scale: 2.4 1;
+                translate: calc(100 * var(--u)) calc(-20 * var(--u));
+                transform-origin: left center;
+            }
+            .nontechnical-card-design.project-1{
+                scale: 2.2;
+                translate: calc(100 * var(--u)) calc(90 * var(--u));
+            }
+            .workspage-vector .right-vector{
+                translate: 0 calc(-50 * var(--u));
+            }
+            .workspage-vector .left-vector{
+                translate: 0 calc(-64 * var(--u));
+            }
+            .journeypage-vector{
+                translate: 0 calc(9 * var(--u));
+            }
+        }
