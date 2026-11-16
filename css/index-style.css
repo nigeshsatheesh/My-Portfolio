@@ -518,6 +518,8 @@ footer a img::selection,
 .nontechnical-card-content .role{
     display: flex;
     flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
     margin-top: 30px;
 }
 .nontechnical-card-content .role h6{
@@ -525,16 +527,18 @@ footer a img::selection,
     -webkit-text-stroke: 0.5px #232323;
     letter-spacing: 1px;
     color: #232323;
+    margin: 0;
 }
 .nontechnical-card-content .role p{
     font-family: "HostGroteskMedium";
     color: #675D54;
-    margin-left: 5px;
-    margin-top: -1.5px;
+    margin: 0;
 }
 .nontechnical-card-content .status{
     display: flex;
     flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
     margin-top: -5px;
 }
 .nontechnical-card-content .status h6{
@@ -542,13 +546,12 @@ footer a img::selection,
     -webkit-text-stroke: 0.5px #232323;
     letter-spacing: 1px;
     color: #232323;
-    margin-top: -1px;
+    margin: 0;
 }
 .nontechnical-card-content .status p{
     font-family: "HostGroteskMedium";
     color: #675D54;
-    margin-left: 5px;
-    margin-top: -2.5px;
+    margin: 0;
 }
 .nontechnical-card-design{
     position: absolute;
@@ -2810,29 +2813,29 @@ nav a:hover{
         /*SMALL LAPTOP 1280 x 720 (1101px - 1439px)*/
         @media (min-width: 1101px) and (max-width: 1365px) {
             .workspage-vector .right-vector{
-                translate: 0 calc(6.5 * var(--u));
+                translate: 0 calc(12 * var(--u));
             }
             .workspage-vector .left-vector{
-                translate: 0 calc(7 * var(--u));
+                translate: 0 calc(14 * var(--u));
             }
             .nontechnical-card-design.project-1{
                 scale: 0.8;
                 translate: calc(-20 * var(--u)) calc(-20 * var(--u));
             }
             .journeypage-vector{
-                translate: 0 calc(-6 * var(--u));
+                translate: 0 calc(-10 * var(--u));
             }
         }
         /*LAPTOP 1366 x 768 (1366px - 1439px)*/
         @media (min-width: 1366px) and (max-width: 1439px){
             .workspage-vector .right-vector{
-                translate: 0 calc(2 * var(--u));
+                translate: 0 calc(7 * var(--u));
             }
             .workspage-vector .left-vector{
-                translate: 0 calc(0 * var(--u));
+                translate: 0 calc(6 * var(--u));
             }
             .journeypage-vector{
-                translate: 0 calc(-5 * var(--u));
+                translate: 0 calc(-8 * var(--u));
             }
         }
         /*MACBOOK 1440 x 900 (1440px - 1919px)*/
@@ -2879,13 +2882,13 @@ nav a:hover{
                 translate: calc(70 * var(--u)) calc(50 * var(--u));
             }
             .workspage-vector .right-vector{
-                translate: 0 calc(-35 * var(--u));
+                translate: 0 calc(-32.5 * var(--u));
             }
             .workspage-vector .left-vector{
-                translate: 0 calc(-46 * var(--u));
+                translate: 0 calc(-42 * var(--u));
             }
             .journeypage-vector{
-                translate: 0 calc(5 * var(--u));
+                translate: 0 calc(4 * var(--u));
             }
         }
         /*4K DESKTOP 3840 x 2160*/
@@ -2900,12 +2903,12 @@ nav a:hover{
                 translate: calc(100 * var(--u)) calc(90 * var(--u));
             }
             .workspage-vector .right-vector{
-                translate: 0 calc(-50 * var(--u));
+                translate: 0 calc(-48 * var(--u));
             }
             .workspage-vector .left-vector{
-                translate: 0 calc(-64 * var(--u));
+                translate: 0 calc(-62 * var(--u));
             }
             .journeypage-vector{
-                translate: 0 calc(9 * var(--u));
+                translate: 0 calc(7 * var(--u));
             }
         }
