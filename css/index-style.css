@@ -390,37 +390,40 @@ footer a img::selection,
 .technical-card-content .role{
     display: flex;
     flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
     margin-top: 30px;
 }
-.technical-card-content .role h6{
+.technical-card-content .role #role{
     font-family: "HostGroteskMedium";
     -webkit-text-stroke: 0.5px #232323;
     letter-spacing: 1px;
     color: #232323;
+    margin: 0;
 }
 .technical-card-content .role p{
     font-family: "HostGroteskMedium";
     color: #675D54;
-    margin-left: 5px;
-    margin-top: -1.5px;
+    margin: 0;
 }
 .technical-card-content .status{
     display: flex;
     flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
     margin-top: -5px;
 }
-.technical-card-content .status h6{
+.technical-card-content .status #status{
     font-family: "HostGroteskMedium";
     -webkit-text-stroke: 0.5px #232323;
     letter-spacing: 1px;
     color: #232323;
-    margin-top: -1px;
+    margin: 0;
 }
 .technical-card-content .status p{
     font-family: "HostGroteskMedium";
     color: #675D54;
-    margin-left: 5px;
-    margin-top: -2.5px;
+    margin: 0;
 }
 .technical-works-card.top:hover{
     cursor: pointer;
@@ -522,7 +525,7 @@ footer a img::selection,
     gap: 5px;
     margin-top: 30px;
 }
-.nontechnical-card-content .role h6{
+.nontechnical-card-content .role #role{
     font-family: "HostGroteskMedium";
     -webkit-text-stroke: 0.5px #232323;
     letter-spacing: 1px;
@@ -541,7 +544,7 @@ footer a img::selection,
     gap: 5px;
     margin-top: -5px;
 }
-.nontechnical-card-content .status h6{
+.nontechnical-card-content .status #status{
     font-family: "HostGroteskMedium";
     -webkit-text-stroke: 0.5px #232323;
     letter-spacing: 1px;
