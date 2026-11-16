@@ -101,7 +101,7 @@ The layout was designed first for laptop viewports and then adapted to smaller s
 
 - Learning CSS styling and JS functionality
 - Masking the SVG brushstroke paths
-- Responsiveness of the website. (AI was importantly used for this - Claude and Chatgpt)
+- Render reveal animationgit,Responsiveness of the website. (AI was importantly used for this - Claude and Chatgpt)
 
 ## Author
 

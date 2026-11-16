@@ -120,6 +120,26 @@ footer a img::selection,
     background: transparent;
 }
 
+/*REVEAL ANIMATION*/
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: fadeSlideLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) both;
+}
+
+@keyframes fadeSlideLeft {
+  from { opacity: 0; translate: -40px 0; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; }
+  .reveal.is-visible { animation: none; }
+}
+
 /*ABOUT SECTION*/
 
 .about{
