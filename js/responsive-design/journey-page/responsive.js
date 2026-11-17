@@ -87,3 +87,10 @@
     }
     schedule();
 })();
+document.querySelectorAll('.journey-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+        if (window.matchMedia('(max-width: 700px)').matches) {
+            card.classList.toggle('expanded');
+        }
+    });
+});
