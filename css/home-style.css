@@ -307,6 +307,10 @@ body{
     left: calc(60 * var(--t)); 
     top: calc(172 * var(--t)); 
 }
+.homepage-vector {
+    translate: 0 calc(100svh - var(--ref-h, 100svh));
+}
+
 /*MOBILE VIEWPORT*/
 @media (max-width: 480px) {
     nav {
@@ -343,36 +347,42 @@ body{
     /*SAMSUNG GALAXY A55*/
     @media (max-width: 360px) {
         .homepage-vector { 
+            --ref-h: 806px;
             transform: translate(15px, 645px); 
         }
     }
     /*IPHONE SE*/
     @media (min-width: 361px) and (max-width: 380px) {
         .homepage-vector { 
+            --ref-h: 667px;
             transform: translate(15px, 500px); 
         }
     }
     /*IPHONE 16*/
     @media (min-width: 381px) and (max-width: 400px) {
         .homepage-vector { 
+            --ref-h: 852px;
             transform: translate(15px, 675px); 
         }
     }
     /*PIXEL 9 & 10*/
     @media (min-width: 401px) and (max-width: 420px) {
         .homepage-vector { 
+            --ref-h: 923px;
             transform: translate(15px, 740px); 
         }
     }
     /*PIXEL 9 PRO*/
     @media (min-width: 421px) and (max-width: 439px){
         .homepage-vector { 
+            --ref-h: 952px;
             transform: translate(15px, 760px); 
         }
     }
     /*IPHONE 16 PRO MAX*/
     @media (min-width: 440px) and (max-width: 480px){
         .homepage-vector { 
+            --ref-h: 956px;
             transform: translate(15px, 760px); 
         }
     }
@@ -408,18 +418,21 @@ body{
     /*IPAD MINI*/
     @media (min-width: 481px) and (max-width: 768px) {
         .homepage-vector { 
+            --ref-h: 1024px;
             transform: translate(15px, 680px); 
         }
     }
     /*SURFACE PRO 10*/
     @media (min-width: 769px) and (max-width: 960px) {
         .homepage-vector { 
+            --ref-h: 1368px;
             transform: translate(15px, 1010px); 
         }
     }
     /*IPAD PRO 13*/
     @media (min-width: 961px) and (max-width: 1032px) {
         .homepage-vector { 
+            --ref-h: 1376px;
             transform: translate(15px, 910px); 
         }
     }
