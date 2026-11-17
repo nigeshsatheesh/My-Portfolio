@@ -939,6 +939,7 @@ footer a img::selection,
 }
 .contact #resume{
     font-family: "HostGroteskItalic";
+    font-style: italic;
     margin-left: 40px;
     color: #A39383;
 }
@@ -969,6 +970,7 @@ footer a img::selection,
 }
 .social-links p{
     font-family: "HostGroteskSemiBoldItalic";
+    font-style: italic;
     font-size: 20px;
     color: #E5DFD3;
 }
