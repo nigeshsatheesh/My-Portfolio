@@ -863,7 +863,13 @@ footer a img::selection,
     font-size: 15px;
     color: #675D54;
     margin-left: 10px;
+    margin-right: 10px;
     margin-top: -5px;
+}
+.card-content ul{
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 .journeypage-vector{
     position: absolute;
@@ -2949,3 +2955,4 @@ nav a:hover{
                 translate: 0 calc(7 * var(--u));
             }
         }
+        
