@@ -221,6 +221,7 @@ footer a img::selection,
 .skills-header .second{
     font-family: "HostGroteskItalic";
     font-size: 100px;
+    font-style: italic;
     color: #232323;
     letter-spacing: -7px;
     margin-top: -60px;
@@ -321,6 +322,7 @@ footer a img::selection,
 }
 .works-header .second{
     font-family: "HostGroteskItalic";
+    font-style: italic;
     font-size: 100px;
     color: #232323;
     letter-spacing: -7px;
@@ -381,6 +383,7 @@ footer a img::selection,
 }
 .technical-links a{
     font-family: "HostGroteskItalic";
+    font-style: italic;
     color: #675D54;
 }
 .technical-links #arrow{
@@ -511,6 +514,7 @@ footer a img::selection,
 }
 .nontechnical-links a{
     font-family: "HostGroteskItalic";
+    font-style: italic;
     color: #675D54;
 }
 .nontechnical-links #arrow{
@@ -743,6 +747,7 @@ footer a img::selection,
 .journey-subsection-title p{
     font-family: "HostGroteskLightItalic";
     font-size: 24px;
+    font-style: italic;
     color: #232323;
     letter-spacing: -1px;
 }
@@ -754,6 +759,7 @@ footer a img::selection,
 }
 .journey-subsection-item-title{
     font-family: "HostGroteskBoldItalic";
+    font-style: italic;
     font-size: 20px;
     color: #232323;
     letter-spacing: -1px;
@@ -908,6 +914,7 @@ footer a img::selection,
 }
 .contact-header .second{
     font-family: "HostGroteskItalic";
+    font-style: italic;
     font-size: 100px;
     color: #FBF7F4;
     letter-spacing: -7px;
@@ -929,6 +936,7 @@ footer a img::selection,
 }
 .contact a{
     font-family: "HostGroteskItalic";
+    font-style: italic;
     margin-left: 40px;
     color: #A39383;
 }
@@ -1042,6 +1050,7 @@ footer a img::selection,
 }
 .contact-form input::placeholder{
     font-family: "HostGroteskItalic";
+    font-style: italic;
     font-size: 16px;
     color: #232323;
     opacity: 75%;
@@ -1081,6 +1090,7 @@ footer a img::selection,
 }
 .contact-form textarea::placeholder{
     font-family: "HostGroteskItalic";
+    font-style: italic;
     font-size: 16px;
     color: #232323;
     opacity: 75%;
