@@ -940,7 +940,6 @@ footer a img::selection,
 .contact #resume{
     font-family: "HostGroteskItalic";
     font-style: italic;
-    margin-left: 40px;
     color: #A39383;
 }
 .contact #resume:hover{
