@@ -802,7 +802,9 @@ footer a img::selection,
     background-color: #E5DFD3;
     border-radius: 5px;
     width: 550px;
-    height: 345px;
+    height: auto;
+    min-height: 320px;
+    padding-bottom: 16px;
 }
 .journey-card-internships{
     display: flex;
@@ -2618,7 +2620,9 @@ nav a:hover{
         .journey-card-certifications{
             border-radius: calc(5 * var(--u));
             width: calc(550 * var(--u));
-            height: calc(345 * var(--u));
+            height: auto;
+            min-height: calc(320 * var(--u));
+            padding-bottom: calc(16 * var(--u));
         }
         .journey-card-internships{
             border-radius: calc(5 * var(--u));
