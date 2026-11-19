@@ -603,7 +603,7 @@ footer a img::selection,
 }
 .workspage-vector{
     position: absolute;
-    top: -11px;
+    top: 80px;
     left: 0;
     opacity: 30%;
     z-index: -1;
@@ -2859,10 +2859,10 @@ nav a:hover{
         /*SMALL LAPTOP 1280 x 720 (1101px - 1439px)*/
         @media (min-width: 1101px) and (max-width: 1365px) {
             .workspage-vector .right-vector{
-                translate: 0 calc(12 * var(--u));
+                translate: 0 calc(-2 * var(--u));
             }
             .workspage-vector .left-vector{
-                translate: 0 calc(14 * var(--u));
+                translate: 0 calc(-1 * var(--u));
             }
             .nontechnical-card-design.project-1{
                 scale: 0.8;
@@ -2875,10 +2875,10 @@ nav a:hover{
         /*LAPTOP 1366 x 768 (1366px - 1439px)*/
         @media (min-width: 1366px) and (max-width: 1439px){
             .workspage-vector .right-vector{
-                translate: 0 calc(7 * var(--u));
+                translate: 0 calc(-2 * var(--u));
             }
             .workspage-vector .left-vector{
-                translate: 0 calc(6 * var(--u));
+                translate: 0 calc(-3 * var(--u));
             }
             .journeypage-vector{
                 translate: 0 calc(-8 * var(--u));
@@ -2908,10 +2908,10 @@ nav a:hover{
                 translate: calc(0 * var(--u)) calc(30 * var(--u));
             }
             .workspage-vector .right-vector{
-                translate: 0 calc(-22 * var(--u));
+                translate: 0 calc(-2 * var(--u));
             }
             .workspage-vector .left-vector{
-                translate: 0 calc(-28 * var(--u));
+                translate: 0 calc(-9 * var(--u));
             }
             .journeypage-vector{
                 translate: 0 calc(0.5 * var(--u));
@@ -2928,10 +2928,10 @@ nav a:hover{
                 translate: calc(70 * var(--u)) calc(50 * var(--u));
             }
             .workspage-vector .right-vector{
-                translate: 0 calc(-32.5 * var(--u));
+                translate: 0 calc(-2 * var(--u));
             }
             .workspage-vector .left-vector{
-                translate: 0 calc(-42 * var(--u));
+                translate: 0 calc(-13 * var(--u));
             }
             .journeypage-vector{
                 translate: 0 calc(4 * var(--u));
@@ -2949,10 +2949,10 @@ nav a:hover{
                 translate: calc(100 * var(--u)) calc(90 * var(--u));
             }
             .workspage-vector .right-vector{
-                translate: 0 calc(-48 * var(--u));
+                translate: 0 calc(-2 * var(--u));
             }
             .workspage-vector .left-vector{
-                translate: 0 calc(-62 * var(--u));
+                translate: 0 calc(-17 * var(--u));
             }
             .journeypage-vector{
                 translate: 0 calc(7 * var(--u));
