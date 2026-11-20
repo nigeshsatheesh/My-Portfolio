@@ -29,12 +29,12 @@ document
     });
 
 const NUDGES = [
-    [1101, 1365,   44, 46],   // small laptop 1280
-    [1366, 1439,   34, 33.5],   // laptop 1366
-    [1440, 1919,   -4, -4],   // MacBook 1440 / 1536
-    [1920, 2559, 2, -3],   // Full HD 1920  <- right vector sits too low, so start negative
-    [2560, 3839,   -16, -26],   // QHD 2560
-    [3840, 99999,  -37, -50.5],   // 4K 3840
+    [1101, 1365,   44, 46],   // 1280 x 720
+    [1366, 1439,   33, 33.5],   // 1366 x 768
+    [1440, 1919,   -4, -4],   // 1440 x 900
+    [1920, 2559, 2, -3],   // 1920 x 1080 
+    [2560, 3839,   -16, -26],   // 2560 x 1440
+    [3840, 99999,  -37, -50.5],   // 3840 x 2160
   ];
   const DESKTOP_MIN = 1101;
   const BASE_W = 1536;
@@ -80,7 +80,6 @@ const NUDGES = [
       .forEach(el => el.style.translate = `0px ${dyLeft}px`);
   }
 
-  /* Optional: shows the nudge values that reproduce the CSS-only position at the current width */
   window.calibrateVectors = () => {
     const m = measure();
     if (!m) return console.warn('hr or vector element not found');

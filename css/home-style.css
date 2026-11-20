@@ -402,7 +402,7 @@ body{
     /*FOLDABLES*/
     @media (min-height: 968px) {
         .homepage-vector { 
-            transform: translate(15px, 785px); 
+            transform: translate(15px, 738px); 
         }
     }
 
@@ -438,12 +438,12 @@ body{
     /*SURFACE PRO 10*/
     @media (min-width: 769px) and (max-width: 960px) {
         .homepage-vector { 
-            --ref-h: 1368px;
+            --ref-h: 1442px;
             transform: translate(15px, 1010px); 
         }
     }
     /*IPAD PRO 13*/
-    @media (min-width: 961px) and (max-width: 1032px) {
+    @media (min-width: 961px) and (max-width: 1100px) {
         .homepage-vector { 
             --ref-h: 1376px;
             transform: translate(15px, 910px); 
@@ -599,4 +599,25 @@ body{
             scale: 2.5;
             transform: translateY(-50px) translateX(480px);
         }
+    }
+    @media (min-width: 1101px) and (max-width: 1365px) { 
+        .homepage-vector { --ref-h: 720px;  } 
+    }
+    @media (min-width: 1366px) and (max-width: 1439px) { 
+        .homepage-vector { --ref-h: 768px;  } 
+    }
+    @media (min-width: 1440px) and (max-width: 1599px) { 
+        .homepage-vector { --ref-h: 650px;  } 
+    }
+    @media (min-width: 1600px) and (max-width: 1919px) { 
+        .homepage-vector { --ref-h: 900px;  } 
+    }
+    @media (min-width: 1920px) and (max-width: 2559px) { 
+        .homepage-vector { --ref-h: 1080px; } 
+    }
+    @media (min-width: 2560px) and (max-width: 3839px) { 
+        .homepage-vector { --ref-h: 1440px; } 
+    }
+    @media (min-width: 3840px) { 
+        .homepage-vector { --ref-h: 2160px; } 
     }

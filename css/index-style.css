@@ -3022,5 +3022,9 @@ nav a:hover{
         .journey-card .card-content li{
             font-size: clamp(14px, 0.9766vw, 40px);
         }
-        @media (min-width: 2560px){ .skillspage-vector{ --sv-stretch: 1.8; } }
-        @media (min-width: 3840px){ .skillspage-vector{ --sv-stretch: 2.4; } }
+        @media (min-width: 2560px){ 
+            .skillspage-vector{ --sv-stretch: 1.8; } 
+        }
+        @media (min-width: 3840px){ 
+            .skillspage-vector{ --sv-stretch: 2.4; } 
+        }
