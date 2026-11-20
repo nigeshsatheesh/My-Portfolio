@@ -30,7 +30,7 @@ document
 
 const NUDGES = [
     [1101, 1365,   44, 46],   // small laptop 1280
-    [1366, 1439,   33.5, 33.5],   // laptop 1366
+    [1366, 1439,   34, 33.5],   // laptop 1366
     [1440, 1919,   -4, -4],   // MacBook 1440 / 1536
     [1920, 2559, 2, -3],   // Full HD 1920  <- right vector sits too low, so start negative
     [2560, 3839,   -16, -26],   // QHD 2560
