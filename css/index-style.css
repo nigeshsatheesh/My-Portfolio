@@ -257,8 +257,9 @@ footer a img::selection,
 }
 .skills-card .card-content > ul{
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, max-content);
     column-gap: 50px;
+    row-gap: 10px;
 }
 .skills-card .card-content.languages-programming{
     display: flex;
@@ -267,6 +268,7 @@ footer a img::selection,
 .skills-card .card-content .programming > ul{
     display: grid;
     grid-template-columns: 150px 50px;
+    row-gap: 5px;
     margin-top: -15px;
 }
 .skills-card .card-content.tools-platform > ul > li{
@@ -274,6 +276,7 @@ footer a img::selection,
 }
 .skills-card .card-content.soft-skills > ul > li{
     margin-bottom: 15px;
+    row-gap: 5px;
 }
 .skills-card .card-content:hover{
     transform: translatex(5px);
@@ -848,7 +851,7 @@ footer a img::selection,
     width: 550px;
     height: 160px;
 }
-.card-title{
+.journey-card .card-title{
     font-family: "SpaceGroteskBold";
     font-size: 40px;
     color:#232323;
@@ -856,7 +859,7 @@ footer a img::selection,
     margin-left: 20px;
     letter-spacing: -1px;
 }
-.card-content{
+.journey-card .card-content{
     display: flex;
     flex-wrap: wrap;
     font-family: "HostGroteskMedium";
@@ -866,7 +869,7 @@ footer a img::selection,
     margin-right: 10px;
     margin-top: -5px;
 }
-.card-content ul{
+.journey-card .card-content ul{
     min-width: 0;
     max-width: 100%;
     overflow-wrap: break-word;
