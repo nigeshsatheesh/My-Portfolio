@@ -2717,6 +2717,9 @@ nav a:hover{
             width: calc(1250 * var(--u));
             font-size: max(12px, calc(20 * var(--u)));
         }
+        .contact #resume{
+            margin-left: 40px;
+        }
         .contact #arrow{
             width: calc(8 * var(--u));
             height: calc(8 * var(--u));
