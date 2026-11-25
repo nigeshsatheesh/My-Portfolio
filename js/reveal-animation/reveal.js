@@ -27,6 +27,15 @@ targets.forEach((el) => {
   el.classList.add("reveal");
 });
 
+targets.forEach((el) => {
+  const n = counters.get(el.parentElement) ?? 0;
+  counters.set(el.parentElement, n + 1);
+  el.style.setProperty("--delay", `${Math.min(n * 0.08, 0.6)}s`);
+  el.classList.add("reveal");
+});
+
+document.documentElement.classList.add("reveal-ready");
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {

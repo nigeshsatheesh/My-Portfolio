@@ -123,6 +123,18 @@ footer a img::selection,
 
 /*REVEAL ANIMATION*/
 
+html.js:not(.reveal-ready) body {
+  visibility: hidden;
+}
+
+html.js body {
+  animation: reveal-fallback 0s 2s forwards;
+}
+
+@keyframes reveal-fallback {
+  to { visibility: visible; }
+}
+
 .reveal {
   opacity: 0;
 }
